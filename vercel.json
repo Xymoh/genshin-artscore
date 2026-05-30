@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "/api/proxy",
+      "dest": "/api/proxy.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

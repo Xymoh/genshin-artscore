@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0f1117;
+  --color-dark-card: #1a1d2e;
+  --color-dark-card-hover: #1f2338;
+  --color-dark-border: #2a2d3e;
+  --color-dark-text: #e4e4e7;
+  --color-dark-muted: #8b8fa3;
+  --color-accent: #d4a853;
+
+  --color-grade-s-plus: #ffd700;
+  --color-grade-s: #ff8c00;
+  --color-grade-a: #a855f7;
+  --color-grade-b: #3b82f6;
+  --color-grade-c: #22c55e;
+  --color-grade-d: #6b7280;
+  --color-grade-f: #ef4444;
+
+  --color-element-pyro: #ef4444;
+  --color-element-hydro: #3b82f6;
+  --color-element-anemo: #22d3ee;
+  --color-element-electro: #a855f7;
+  --color-element-dendro: #22c55e;
+  --color-element-cryo: #93c5fd;
+  --color-element-geo: #f59e0b;
+
+  --color-stat-crit-rate: #f59e0b;
+  --color-stat-crit-dmg: #ef4444;
+  --color-stat-atk-percent: #f97316;
+  --color-stat-hp-percent: #22c55e;
+  --color-stat-def-percent: #facc15;
+  --color-stat-em: #a855f7;
+  --color-stat-er: #60a5fa;
+  --color-stat-healing: #fb923c;
+  --color-stat-physical-dmg: #94a3b8;
+  --color-stat-elemental-dmg: #38bdf8;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  :root {
+    --grade-s-plus: #ffd700;
+    --grade-s: #ff8c00;
+    --grade-a: #a855f7;
+    --grade-b: #3b82f6;
+    --grade-c: #22c55e;
+    --grade-d: #6b7280;
+    --grade-f: #ef4444;
+
+    --element-pyro: #ef4444;
+    --element-hydro: #3b82f6;
+    --element-anemo: #22d3ee;
+    --element-electro: #a855f7;
+    --element-dendro: #22c55e;
+    --element-cryo: #93c5fd;
+    --element-geo: #f59e0b;
+
+    --stat-crit-rate: #f59e0b;
+    --stat-crit-dmg: #ef4444;
+    --stat-atk-percent: #f97316;
+    --stat-hp-percent: #22c55e;
+    --stat-def-percent: #facc15;
+    --stat-em: #a855f7;
+    --stat-er: #60a5fa;
+    --stat-healing: #fb923c;
+    --stat-physical-dmg: #94a3b8;
+    --stat-elemental-dmg: #38bdf8;
+  }
+
+  :root[data-theme="light"] {
+    --color-dark-bg: #f8fafc;
+    --color-dark-card: #ffffff;
+    --color-dark-card-hover: #f1f5f9;
+    --color-dark-border: #e2e8f0;
+    --color-dark-text: #0f172a;
+    --color-dark-muted: #64748b;
+    --color-accent: #b8860b;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  .tier-list-card {
+    background-color: var(--color-dark-card);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .tier-list-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .score-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    height: 32px;
+    border-radius: 16px;
+    padding: 0 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+    color: #0f1117;
+  }
+
+  .substat-bar-track {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .substat-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .character-card {
+    background-color: var(--color-dark-card);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .set-bonus-slot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--color-dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .set-bonus-slot.active {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(212, 168, 83, 0.3);
+  }
+
+  .stat-label-text {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--color-dark-muted);
+    white-space: nowrap;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-dark-border) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-border);
+    border-radius: 3px;
+  }
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-dark-card) 25%,
+    var(--color-dark-card-hover) 50%,
+    var(--color-dark-card) 75%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Card entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Pulse for high-score artifacts */
+@keyframes scorePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0);
+  }
+}
+
+.animate-score-pulse {
+  animation: scorePulse 2s ease-in-out infinite;
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
