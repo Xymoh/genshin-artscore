@@ -67,7 +67,7 @@ export function SetBonusRow({ artifacts, activeSetBonuses }: SetBonusRowProps) {
           activeSetBonuses.map((setId) => {
             const count = setCounts.get(setId) ?? 0;
             const color = setColors.get(setId) ?? "#6b7280";
-            const name = ARTIFACTS[setId]?.name ?? `Set ${setId}`;
+            const name = ARTIFACTS[setId]?.name ?? "";
 
             const bonuses: string[] = [];
             if (count >= 4) bonuses.push("4pc");

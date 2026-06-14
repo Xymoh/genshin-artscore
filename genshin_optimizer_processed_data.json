@@ -1,0 +1,5020 @@
+{
+  "KamisatoAyaka": {
+    "name": "KamisatoAyaka",
+    "display_name": "Kamisato Ayaka",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000002",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.85,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.2,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_DMG",
+        "CRIT_RATE"
+      ]
+    },
+    "recommended_sets": [
+      "14014"
+    ],
+    "er_threshold": 130,
+    "base_stats": {
+      "hp_base": 1000.986,
+      "atk_base": 26.6266,
+      "def_base": 61.0266
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Jean": {
+    "name": "Jean",
+    "display_name": "Jean",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000003",
+    "scaling_attribute": "Healing%",
+    "scaling_stat": "HEALING_BONUS",
+    "ascension_stat": "heal_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0554,
+      0.1108,
+      0.1108,
+      0.1662,
+      0.2215
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.6,
+      "CRIT_DMG": 0.6,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0.4,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.2,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14005"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1143.984,
+      "atk_base": 18.62,
+      "def_base": 59.83
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Traveler": {
+    "name": "Traveler",
+    "display_name": "Traveler",
+    "element": "Unknown",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000005",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 911.791,
+      "atk_base": 17.808,
+      "def_base": 57.225
+    },
+    "region": null,
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Lisa": {
+    "name": "Lisa",
+    "display_name": "Lisa",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000006",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 802.3761,
+      "atk_base": 19.41072,
+      "def_base": 48.069
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Barbara": {
+    "name": "Barbara",
+    "display_name": "Barbara",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000014",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 820.6119,
+      "atk_base": 13.356,
+      "def_base": 56.0805
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Kaeya": {
+    "name": "Kaeya",
+    "display_name": "Kaeya",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000015",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0667,
+      0.1333,
+      0.1333,
+      0.2,
+      0.2667
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 975.6164,
+      "atk_base": 18.6984,
+      "def_base": 66.381
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Diluc": {
+    "name": "Diluc",
+    "display_name": "Diluc",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000016",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14009"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1010.5192,
+      "atk_base": 26.068,
+      "def_base": 61.0266
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Razor": {
+    "name": "Razor",
+    "display_name": "Razor",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000020",
+    "scaling_attribute": "Physical DMG%",
+    "scaling_stat": "PHYSICAL_DMG",
+    "ascension_stat": "physical_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.075,
+      0.15,
+      0.15,
+      0.225,
+      0.3
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "PHYSICAL_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14003",
+      "14001"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1002.9701,
+      "atk_base": 19.5888,
+      "def_base": 62.9475
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Amber": {
+    "name": "Amber",
+    "display_name": "Amber",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000021",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 793.2582,
+      "atk_base": 18.6984,
+      "def_base": 50.358
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Venti": {
+    "name": "Venti",
+    "display_name": "Venti",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000022",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.08,
+      0.16,
+      0.16,
+      0.24,
+      0.32
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG",
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14005"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 819.8552,
+      "atk_base": 20.482,
+      "def_base": 52.0521
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xiangling": {
+    "name": "Xiangling",
+    "display_name": "Xiangling",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000023",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.75,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018"
+    ],
+    "er_threshold": 180,
+    "base_stats": {
+      "hp_base": 911.791,
+      "atk_base": 18.87648,
+      "def_base": 56.0805
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Beidou": {
+    "name": "Beidou",
+    "display_name": "Beidou",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000024",
+    "scaling_attribute": "Electro DMG%",
+    "scaling_stat": "ELECTRO_DMG",
+    "ascension_stat": "electro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018",
+      "14003"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1094.1492,
+      "atk_base": 18.87648,
+      "def_base": 54.36375
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xingqiu": {
+    "name": "Xingqiu",
+    "display_name": "Xingqiu",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000025",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018"
+    ],
+    "er_threshold": 180,
+    "base_stats": {
+      "hp_base": 857.08356,
+      "atk_base": 16.9176,
+      "def_base": 63.51975
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xiao": {
+    "name": "Xiao",
+    "display_name": "Xiao",
+    "element": "Anemo",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000026",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.2,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14017",
+      "14021"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 991.4528,
+      "atk_base": 27.1852,
+      "def_base": 62.2232
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Ningguang": {
+    "name": "Ningguang",
+    "display_name": "Ningguang",
+    "element": "Geo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000027",
+    "scaling_attribute": "Geo DMG%",
+    "scaling_stat": "GEO_DMG",
+    "ascension_stat": "geo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 820.6119,
+      "atk_base": 17.808,
+      "def_base": 48.069
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Klee": {
+    "name": "Klee",
+    "display_name": "Klee",
+    "element": "Pyro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000029",
+    "scaling_attribute": "Pyro DMG%",
+    "scaling_stat": "PYRO_DMG",
+    "ascension_stat": "pyro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 800.7888,
+      "atk_base": 24.206,
+      "def_base": 47.864
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Zhongli": {
+    "name": "Zhongli",
+    "display_name": "Zhongli",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000030",
+    "scaling_attribute": "Geo DMG%",
+    "scaling_stat": "GEO_DMG",
+    "ascension_stat": "geo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.5,
+      "HP_PERCENT": 0.9,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14015",
+      "14007"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1143.984,
+      "atk_base": 19.551,
+      "def_base": 57.4368
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Fischl": {
+    "name": "Fischl",
+    "display_name": "Fischl",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000031",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14030"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 770.4634,
+      "atk_base": 20.4792,
+      "def_base": 49.78575
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Bennett": {
+    "name": "Bennett",
+    "display_name": "Bennett",
+    "element": "Pyro",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000032",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0667,
+      0.1333,
+      0.1333,
+      0.2,
+      0.2667
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.7,
+      "CRIT_DMG": 0.7,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0.6,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0.3,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.1,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "HP_PERCENT",
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14011"
+    ],
+    "er_threshold": 220,
+    "base_stats": {
+      "hp_base": 1039.4418,
+      "atk_base": 16.0272,
+      "def_base": 64.66425
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Tartaglia": {
+    "name": "Tartaglia",
+    "display_name": "Tartaglia",
+    "element": "Hydro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000033",
+    "scaling_attribute": "Hydro DMG%",
+    "scaling_stat": "HYDRO_DMG",
+    "ascension_stat": "hydro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14013",
+      "14002"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1020.0524,
+      "atk_base": 23.4612,
+      "def_base": 63.4198
+    },
+    "region": "snezhnaya",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Noelle": {
+    "name": "Noelle",
+    "display_name": "Noelle",
+    "element": "Geo",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000034",
+    "scaling_attribute": "DEF_",
+    "scaling_stat": "DEF_",
+    "ascension_stat": "def_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.075,
+      0.15,
+      0.15,
+      0.225,
+      0.3
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1012.088,
+      "atk_base": 16.0272,
+      "def_base": 66.95325
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Qiqi": {
+    "name": "Qiqi",
+    "display_name": "Qiqi",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000035",
+    "scaling_attribute": "Healing%",
+    "scaling_stat": "HEALING_BONUS",
+    "ascension_stat": "heal_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0554,
+      0.1108,
+      0.1108,
+      0.1662,
+      0.2215
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 1,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.6,
+      "HEALING_BONUS": 0.7,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.3,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ATK_PERCENT"
+      ],
+      "CIRCLET": [
+        "ATK_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14006",
+      "14020"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 962.8532,
+      "atk_base": 22.344,
+      "def_base": 71.796
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Chongyun": {
+    "name": "Chongyun",
+    "display_name": "Chongyun",
+    "element": "Cryo",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000036",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 920.90894,
+      "atk_base": 18.6984,
+      "def_base": 54.36375
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Ganyu": {
+    "name": "Ganyu",
+    "display_name": "Ganyu",
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000037",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.9,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_DMG",
+        "CRIT_RATE"
+      ]
+    },
+    "recommended_sets": [
+      "14014",
+      "14002"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 762.656,
+      "atk_base": 26.068,
+      "def_base": 49.0606
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Albedo": {
+    "name": "Albedo",
+    "display_name": "Albedo",
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000038",
+    "scaling_attribute": "Geo DMG%",
+    "scaling_stat": "GEO_DMG",
+    "ascension_stat": "geo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.9,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.2
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG",
+        "DEF_PERCENT"
+      ]
+    },
+    "recommended_sets": [
+      "14019"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1029.5856,
+      "atk_base": 19.551,
+      "def_base": 68.2062
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Diona": {
+    "name": "Diona",
+    "display_name": "Diona",
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000039",
+    "scaling_attribute": "Cryo DMG%",
+    "scaling_stat": "CRYO_DMG",
+    "ascension_stat": "cryo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 802.3761,
+      "atk_base": 17.808,
+      "def_base": 50.358
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Mona": {
+    "name": "Mona",
+    "display_name": "Mona",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000041",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.08,
+      0.16,
+      0.16,
+      0.24,
+      0.32
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018"
+    ],
+    "er_threshold": 180,
+    "base_stats": {
+      "hp_base": 810.322,
+      "atk_base": 22.344,
+      "def_base": 50.8555
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Keqing": {
+    "name": "Keqing",
+    "display_name": "Keqing",
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000042",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14003",
+      "14017"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1020.0524,
+      "atk_base": 25.137,
+      "def_base": 62.2232
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Sucrose": {
+    "name": "Sucrose",
+    "display_name": "Sucrose",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000043",
+    "scaling_attribute": "Anemo DMG%",
+    "scaling_stat": "ANEMO_DMG",
+    "ascension_stat": "anemo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
+    "recommended_sets": [
+      "14005"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 775.02234,
+      "atk_base": 14.2464,
+      "def_base": 58.94175
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xinyan": {
+    "name": "Xinyan",
+    "display_name": "Xinyan",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000044",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 939.1447,
+      "atk_base": 20.83536,
+      "def_base": 66.95325
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Rosaria": {
+    "name": "Rosaria",
+    "display_name": "Rosaria",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000045",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1030.3239,
+      "atk_base": 20.12304,
+      "def_base": 59.514
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "HuTao": {
+    "name": "HuTao",
+    "display_name": "Hu Tao",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000046",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.75,
+      "ENERGY_RECHARGE": 0.1,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.15,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14009",
+      "14017"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1210.7164,
+      "atk_base": 8.2859,
+      "def_base": 68.2062
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "KaedeharaKazuha": {
+    "name": "KaedeharaKazuha",
+    "display_name": "Kaedehara Kazuha",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000047",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
+    "recommended_sets": [
+      "14005"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1039.1188,
+      "atk_base": 23.0888,
+      "def_base": 62.8215
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Yanfei": {
+    "name": "Yanfei",
+    "display_name": "Yanfei",
+    "element": "Pyro",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000048",
+    "scaling_attribute": "Pyro DMG%",
+    "scaling_stat": "PYRO_DMG",
+    "ascension_stat": "pyro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 784.14026,
+      "atk_base": 20.12304,
+      "def_base": 49.2135
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Yoimiya": {
+    "name": "Yoimiya",
+    "display_name": "Yoimiya",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000049",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14017",
+      "14009"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 791.2556,
+      "atk_base": 25.137,
+      "def_base": 47.864
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Thoma": {
+    "name": "Thoma",
+    "display_name": "Thoma",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000050",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 866.2015,
+      "atk_base": 16.9176,
+      "def_base": 62.9475
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Eula": {
+    "name": "Eula",
+    "display_name": "Eula",
+    "element": "Cryo",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000051",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.2,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "PHYSICAL_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14016",
+      "14012"
+    ],
+    "er_threshold": 130,
+    "base_stats": {
+      "hp_base": 1029.5856,
+      "atk_base": 26.6266,
+      "def_base": 58.45391
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "RaidenShogun": {
+    "name": "RaidenShogun",
+    "display_name": "Raiden Shogun",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000052",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.08,
+      0.16,
+      0.16,
+      0.24,
+      0.32
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.85,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG",
+        "ATK_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018"
+    ],
+    "er_threshold": 220,
+    "base_stats": {
+      "hp_base": 1004.79926,
+      "atk_base": 26.2542,
+      "def_base": 61.44541
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Sayu": {
+    "name": "Sayu",
+    "display_name": "Sayu",
+    "element": "Anemo",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000053",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 993.8522,
+      "atk_base": 20.4792,
+      "def_base": 62.432476
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "SangonomiyaKokomi": {
+    "name": "SangonomiyaKokomi",
+    "display_name": "Sangonomiya Kokomi",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000054",
+    "scaling_attribute": "Hydro DMG%",
+    "scaling_stat": "HYDRO_DMG",
+    "ascension_stat": "hydro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0.8,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG",
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "HP_PERCENT"
+      ]
+    },
+    "recommended_sets": [
+      "14020",
+      "14015"
+    ],
+    "er_threshold": 150,
+    "base_stats": {
+      "hp_base": 1048.652,
+      "atk_base": 18.2476,
+      "def_base": 51.15465
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Gorou": {
+    "name": "Gorou",
+    "display_name": "Gorou",
+    "element": "Geo",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000055",
+    "scaling_attribute": "Geo DMG%",
+    "scaling_stat": "GEO_DMG",
+    "ascension_stat": "geo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 802.3761,
+      "atk_base": 15.31488,
+      "def_base": 54.36375
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "KujouSara": {
+    "name": "KujouSara",
+    "display_name": "Kujou Sara",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000056",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 802.3761,
+      "atk_base": 16.38336,
+      "def_base": 52.647
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "AratakiItto": {
+    "name": "AratakiItto",
+    "display_name": "Arataki Itto",
+    "element": "Geo",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000057",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.2,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.8,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.2
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14019"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1000.986,
+      "atk_base": 17.689,
+      "def_base": 74.66784
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "YaeMiko": {
+    "name": "YaeMiko",
+    "display_name": "Yae Miko",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000058",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14024",
+      "14030"
+    ],
+    "er_threshold": 140,
+    "base_stats": {
+      "hp_base": 807.46204,
+      "atk_base": 26.4404,
+      "def_base": 44.2742
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "ShikanoinHeizou": {
+    "name": "ShikanoinHeizou",
+    "display_name": "Shikanoin Heizou",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000059",
+    "scaling_attribute": "Anemo DMG%",
+    "scaling_stat": "ANEMO_DMG",
+    "ascension_stat": "anemo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 893.5552,
+      "atk_base": 18.87648,
+      "def_base": 57.33945
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Yelan": {
+    "name": "Yelan",
+    "display_name": "Yelan",
+    "element": "Hydro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000060",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14018"
+    ],
+    "er_threshold": 180,
+    "base_stats": {
+      "hp_base": 1124.9176,
+      "atk_base": 18.9924,
+      "def_base": 42.65879
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Kirara": {
+    "name": "Kirara",
+    "display_name": "Kirara",
+    "element": "Dendro",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000061",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1021.20593,
+      "atk_base": 18.6984,
+      "def_base": 45.78
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Aloy": {
+    "name": "Aloy",
+    "display_name": "Aloy",
+    "element": "Cryo",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000062",
+    "scaling_attribute": "Cryo DMG%",
+    "scaling_stat": "CRYO_DMG",
+    "ascension_stat": "cryo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 848.4548,
+      "atk_base": 18.21036,
+      "def_base": 52.6504
+    },
+    "region": null,
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Shenhe": {
+    "name": "Shenhe",
+    "display_name": "Shenhe",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000063",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1011.47253,
+      "atk_base": 23.6474,
+      "def_base": 64.6164
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "YunJin": {
+    "name": "YunJin",
+    "display_name": "Yun Jin",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000064",
+    "scaling_attribute": "ER%",
+    "scaling_stat": "ENERGY_RECHARGE",
+    "ascension_stat": "enerRech_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0667,
+      0.1333,
+      0.1333,
+      0.2,
+      0.2667
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 893.5552,
+      "atk_base": 16.0272,
+      "def_base": 61.5741
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "KukiShinobu": {
+    "name": "KukiShinobu",
+    "display_name": "Kuki Shinobu",
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000065",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1030.3239,
+      "atk_base": 17.808,
+      "def_base": 62.9475
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "KamisatoAyato": {
+    "name": "KamisatoAyato",
+    "display_name": "Kamisato Ayato",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000066",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 0.35,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14013",
+      "14017"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1067.7184,
+      "atk_base": 23.275,
+      "def_base": 59.83
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Collei": {
+    "name": "Collei",
+    "display_name": "Collei",
+    "element": "Dendro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000067",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 820.6119,
+      "atk_base": 16.73952,
+      "def_base": 50.358
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Dori": {
+    "name": "Dori",
+    "display_name": "Dori",
+    "element": "Electro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000068",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1039.4418,
+      "atk_base": 18.6984,
+      "def_base": 60.6585
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Tighnari": {
+    "name": "Tighnari",
+    "display_name": "Tighnari",
+    "element": "Dendro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000069",
+    "scaling_attribute": "Dendro DMG%",
+    "scaling_stat": "DENDRO_DMG",
+    "ascension_stat": "dendro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 844.64154,
+      "atk_base": 20.8544,
+      "def_base": 49.0606
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Nilou": {
+    "name": "Nilou",
+    "display_name": "Nilou",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000070",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1182.1168,
+      "atk_base": 17.8752,
+      "def_base": 56.71884
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Cyno": {
+    "name": "Cyno",
+    "display_name": "Cyno",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000071",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 972.3864,
+      "atk_base": 24.7646,
+      "def_base": 66.88994
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Candace": {
+    "name": "Candace",
+    "display_name": "Candace",
+    "element": "Hydro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000072",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 911.791,
+      "atk_base": 17.808,
+      "def_base": 57.225
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Nahida": {
+    "name": "Nahida",
+    "display_name": "Nahida",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000073",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 806.5087,
+      "atk_base": 23.275,
+      "def_base": 49.0606
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Layla": {
+    "name": "Layla",
+    "display_name": "Layla",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000074",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 930.0268,
+      "atk_base": 18.16416,
+      "def_base": 54.936
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Wanderer": {
+    "name": "Wanderer",
+    "display_name": "Wanderer",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000075",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 791.2556,
+      "atk_base": 25.5094,
+      "def_base": 47.2657
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Faruzan": {
+    "name": "Faruzan",
+    "display_name": "Faruzan",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000076",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 802.3761,
+      "atk_base": 16.4724,
+      "def_base": 52.647
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Yaoyao": {
+    "name": "Yaoyao",
+    "display_name": "Yaoyao",
+    "element": "Dendro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000077",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0.6,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14023",
+      "14015"
+    ],
+    "er_threshold": 150,
+    "base_stats": {
+      "hp_base": 1030.3239,
+      "atk_base": 17.808,
+      "def_base": 62.9475
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Alhaitham": {
+    "name": "Alhaitham",
+    "display_name": "Alhaitham",
+    "element": "Dendro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000078",
+    "scaling_attribute": "Dendro DMG%",
+    "scaling_stat": "DENDRO_DMG",
+    "ascension_stat": "dendro_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.9,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14024",
+      "14023"
+    ],
+    "er_threshold": 130,
+    "base_stats": {
+      "hp_base": 1039.1188,
+      "atk_base": 24.3922,
+      "def_base": 60.84711
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Dehya": {
+    "name": "Dehya",
+    "display_name": "Dehya",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000079",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1220.2496,
+      "atk_base": 20.6682,
+      "def_base": 48.88111
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Mika": {
+    "name": "Mika",
+    "display_name": "Mika",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000080",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1048.5597,
+      "atk_base": 18.6984,
+      "def_base": 59.800125
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Kaveh": {
+    "name": "Kaveh",
+    "display_name": "Kaveh",
+    "element": "Dendro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000081",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1002.9701,
+      "atk_base": 19.5888,
+      "def_base": 62.9475
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Baizhu": {
+    "name": "Baizhu",
+    "display_name": "Baizhu",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000082",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.1,
+      "ENERGY_RECHARGE": 1.1,
+      "HEALING_BONUS": 0.5,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.6,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14023",
+      "14020"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1039.1188,
+      "atk_base": 14.9891,
+      "def_base": 38.8895
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Lynette": {
+    "name": "Lynette",
+    "display_name": "Lynette",
+    "element": "Anemo",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000083",
+    "scaling_attribute": "Anemo DMG%",
+    "scaling_stat": "ANEMO_DMG",
+    "ascension_stat": "anemo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14005"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1039.4418,
+      "atk_base": 19.41072,
+      "def_base": 59.685677
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Lyney": {
+    "name": "Lyney",
+    "display_name": "Lyney",
+    "element": "Pyro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000084",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14029"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 857.988,
+      "atk_base": 24.7646,
+      "def_base": 41.881
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Freminet": {
+    "name": "Freminet",
+    "display_name": "Freminet",
+    "element": "Cryo",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000085",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1012.088,
+      "atk_base": 21.3696,
+      "def_base": 59.39955
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Wriothesley": {
+    "name": "Wriothesley",
+    "display_name": "Wriothesley",
+    "element": "Cryo",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000086",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14029"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1058.1852,
+      "atk_base": 24.206,
+      "def_base": 59.41119
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Neuvillette": {
+    "name": "Neuvillette",
+    "display_name": "Neuvillette",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000087",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.9,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG",
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG",
+        "HP_PERCENT"
+      ]
+    },
+    "recommended_sets": [
+      "14029"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1143.984,
+      "atk_base": 16.21802,
+      "def_base": 44.8725
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Charlotte": {
+    "name": "Charlotte",
+    "display_name": "Charlotte",
+    "element": "Cryo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000088",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 902.6731,
+      "atk_base": 14.51352,
+      "def_base": 45.78
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Furina": {
+    "name": "Furina",
+    "display_name": "Furina",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000089",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG",
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14030"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 1191.65,
+      "atk_base": 18.9924,
+      "def_base": 54.14615
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Chevreuse": {
+    "name": "Chevreuse",
+    "display_name": "Chevreuse",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000090",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.6,
+      "HEALING_BONUS": 0.5,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14011",
+      "14006"
+    ],
+    "er_threshold": 150,
+    "base_stats": {
+      "hp_base": 1002.9701,
+      "atk_base": 16.20528,
+      "def_base": 50.70135
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Navia": {
+    "name": "Navia",
+    "display_name": "Navia",
+    "element": "Geo",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000091",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.2,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14032"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 984.77954,
+      "atk_base": 27.3714,
+      "def_base": 61.74456
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Gaming": {
+    "name": "Gaming",
+    "display_name": "Gaming",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000092",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 957.38055,
+      "atk_base": 25.28736,
+      "def_base": 58.94175
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xianyun": {
+    "name": "Xianyun",
+    "display_name": "Xianyun",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000093",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 810.322,
+      "atk_base": 26.068,
+      "def_base": 44.57335
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Chiori": {
+    "name": "Chiori",
+    "display_name": "Chiori",
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000094",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 890.4009,
+      "atk_base": 25.137,
+      "def_base": 74.1892
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Sigewinne": {
+    "name": "Sigewinne",
+    "display_name": "Sigewinne",
+    "element": "Hydro",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000095",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1039.1188,
+      "atk_base": 14.9891,
+      "def_base": 38.8895
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Arlecchino": {
+    "name": "Arlecchino",
+    "display_name": "Arlecchino",
+    "element": "Pyro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000096",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14033",
+      "14001"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1020.0524,
+      "atk_base": 26.6266,
+      "def_base": 59.53085
+    },
+    "region": "snezhnaya",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Sethos": {
+    "name": "Sethos",
+    "display_name": "Sethos",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000097",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 820.6119,
+      "atk_base": 19.05456,
+      "def_base": 46.9245
+    },
+    "region": "sumeru",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Clorinde": {
+    "name": "Clorinde",
+    "display_name": "Clorinde",
+    "element": "Electro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000098",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14033"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1008.61255,
+      "atk_base": 26.2542,
+      "def_base": 61.0266
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Emilie": {
+    "name": "Emilie",
+    "display_name": "Emilie",
+    "element": "Dendro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000099",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1056.2786,
+      "atk_base": 26.068,
+      "def_base": 56.8385
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Kachina": {
+    "name": "Kachina",
+    "display_name": "Kachina",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000100",
+    "scaling_attribute": "Geo DMG%",
+    "scaling_stat": "GEO_DMG",
+    "ascension_stat": "geo_dmg_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 989.2932,
+      "atk_base": 18.16416,
+      "def_base": 66.438225
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Kinich": {
+    "name": "Kinich",
+    "display_name": "Kinich",
+    "element": "Dendro",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000101",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14036"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1000.986,
+      "atk_base": 25.8818,
+      "def_base": 62.40269
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Mualani": {
+    "name": "Mualani",
+    "display_name": "Mualani",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000102",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.9,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG",
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
+    "recommended_sets": [
+      "14036"
+    ],
+    "er_threshold": 100,
+    "base_stats": {
+      "hp_base": 1182.1168,
+      "atk_base": 14.1512,
+      "def_base": 44.39386
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Xilonen": {
+    "name": "Xilonen",
+    "display_name": "Xilonen",
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000103",
+    "scaling_attribute": "DEF_",
+    "scaling_stat": "DEF_",
+    "ascension_stat": "def_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.09,
+      0.18,
+      0.18,
+      0.27,
+      0.36
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 1,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0.4,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.3
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "DEF_PERCENT"
+      ],
+      "CIRCLET": [
+        "DEF_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
+    "recommended_sets": [
+      "14035"
+    ],
+    "er_threshold": 160,
+    "base_stats": {
+      "hp_base": 965.71313,
+      "atk_base": 21.413,
+      "def_base": 72.3943
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Chasca": {
+    "name": "Chasca",
+    "display_name": "Chasca",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000104",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 762.656,
+      "atk_base": 26.999,
+      "def_base": 47.864
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Ororon": {
+    "name": "Ororon",
+    "display_name": "Ororon",
+    "element": "Electro",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000105",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 775.02234,
+      "atk_base": 20.4792,
+      "def_base": 49.2135
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Mavuika": {
+    "name": "Mavuika",
+    "display_name": "Mavuika",
+    "element": "Pyro",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000106",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 977.153,
+      "atk_base": 27.93,
+      "def_base": 61.6249
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Citlali": {
+    "name": "Citlali",
+    "display_name": "Citlali",
+    "element": "Cryo",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000107",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 905.654,
+      "atk_base": 9.8686,
+      "def_base": 59.41119
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "LanYan": {
+    "name": "LanYan",
+    "display_name": "Lan Yan",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000108",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 775.02234,
+      "atk_base": 21.01344,
+      "def_base": 48.64125
+    },
+    "region": "liyue",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "YumemizukiMizuki": {
+    "name": "YumemizukiMizuki",
+    "display_name": "Yumemizuki Mizuki",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000109",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 991.4528,
+      "atk_base": 16.758,
+      "def_base": 58.93255
+    },
+    "region": "inazuma",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Iansan": {
+    "name": "Iansan",
+    "display_name": "Iansan",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000110",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 893.5552,
+      "atk_base": 21.54768,
+      "def_base": 53.505375
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Varesa": {
+    "name": "Varesa",
+    "display_name": "Varesa",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000111",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 988.59283,
+      "atk_base": 27.7438,
+      "def_base": 60.84711
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Escoffier": {
+    "name": "Escoffier",
+    "display_name": "Escoffier",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000112",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1039.1188,
+      "atk_base": 26.999,
+      "def_base": 56.95816
+    },
+    "region": "fontaine",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Ifa": {
+    "name": "Ifa",
+    "display_name": "Ifa",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000113",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 845.2303,
+      "atk_base": 14.95872,
+      "def_base": 50.758575
+    },
+    "region": "natlan",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Skirk": {
+    "name": "Skirk",
+    "display_name": "Skirk",
+    "element": "Cryo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000114",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 966.6665,
+      "atk_base": 27.93,
+      "def_base": 62.76167
+    },
+    "region": null,
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Dahlia": {
+    "name": "Dahlia",
+    "display_name": "Dahlia",
+    "element": "Hydro",
+    "weapon_type": "Sword",
+    "rarity": 4,
+    "avatar_id": "10000115",
+    "scaling_attribute": "HP_",
+    "scaling_stat": "HP_",
+    "ascension_stat": "hp_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1048.5597,
+      "atk_base": 15.84912,
+      "def_base": 46.9245
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Ineffa": {
+    "name": "Ineffa",
+    "display_name": "Ineffa",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000116",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 981.9196,
+      "atk_base": 25.6956,
+      "def_base": 64.43691
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Lauma": {
+    "name": "Lauma",
+    "display_name": "Lauma",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000119",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 829.3884,
+      "atk_base": 19.84892,
+      "def_base": 52.0521
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Flins": {
+    "name": "Flins",
+    "display_name": "Flins",
+    "element": "Electro",
+    "weapon_type": "Polearm",
+    "rarity": 5,
+    "avatar_id": "10000120",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 972.3864,
+      "atk_base": 27.3714,
+      "def_base": 62.94116
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Aino": {
+    "name": "Aino",
+    "display_name": "Aino",
+    "element": "Hydro",
+    "weapon_type": "Claymore",
+    "rarity": 4,
+    "avatar_id": "10000121",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 939.1447,
+      "atk_base": 20.30112,
+      "def_base": 50.93025
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Nefer": {
+    "name": "Nefer",
+    "display_name": "Nefer",
+    "element": "Dendro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000122",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 988.9742,
+      "atk_base": 26.8128,
+      "def_base": 62.2232
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Durin": {
+    "name": "Durin",
+    "display_name": "Durin",
+    "element": "Pyro",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000123",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 967.6198,
+      "atk_base": 26.999,
+      "def_base": 64.0181
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Jahoda": {
+    "name": "Jahoda",
+    "display_name": "Jahoda",
+    "element": "Anemo",
+    "weapon_type": "Bow",
+    "rarity": 4,
+    "avatar_id": "10000124",
+    "scaling_attribute": "Healing%",
+    "scaling_stat": "HEALING_BONUS",
+    "ascension_stat": "heal_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.0462,
+      0.0923,
+      0.0923,
+      0.1385,
+      0.1846
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 808.7586,
+      "atk_base": 18.6984,
+      "def_base": 48.64125
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Columbina": {
+    "name": "Columbina",
+    "display_name": "Columbina",
+    "element": "Hydro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000125",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1143.984,
+      "atk_base": 7.448,
+      "def_base": 40.0861
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Zibai": {
+    "name": "Zibai",
+    "display_name": "Zibai",
+    "element": "Geo",
+    "weapon_type": "Sword",
+    "rarity": 5,
+    "avatar_id": "10000126",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.75,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.15
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "DEF_PERCENT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_DMG",
+        "CRIT_RATE"
+      ]
+    },
+    "recommended_sets": [
+      "14036",
+      "14027",
+      "14024"
+    ],
+    "er_threshold": 120,
+    "base_stats": {
+      "hp_base": 1005.7526,
+      "atk_base": 17.5028,
+      "def_base": 74.48835
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Illuga": {
+    "name": "Illuga",
+    "display_name": "Illuga",
+    "element": "Geo",
+    "weapon_type": "Polearm",
+    "rarity": 4,
+    "avatar_id": "10000130",
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1002.9701,
+      "atk_base": 16.0272,
+      "def_base": 68.2122
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Varka": {
+    "name": "Varka",
+    "display_name": "Varka",
+    "element": "Anemo",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000129",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 981.9196,
+      "atk_base": 27.4645,
+      "def_base": 61.92405
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Linnea": {
+    "name": "Linnea",
+    "display_name": "Linnea",
+    "element": "Geo",
+    "weapon_type": "Bow",
+    "rarity": 5,
+    "avatar_id": "10000128",
+    "scaling_attribute": "Crit Rate%",
+    "scaling_stat": "CRIT_RATE",
+    "ascension_stat": "critRate_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 770.28253,
+      "atk_base": 11.172,
+      "def_base": 70.5994
+    },
+    "region": "nodKrai",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Nicole": {
+    "name": "Nicole",
+    "display_name": "Nicole",
+    "element": "Pyro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": "10000131",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.072,
+      0.144,
+      0.144,
+      0.216,
+      0.288
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 810.322,
+      "atk_base": 26.6266,
+      "def_base": 43.79556
+    },
+    "region": null,
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Prune": {
+    "name": "Prune",
+    "display_name": "Prune",
+    "element": "Anemo",
+    "weapon_type": "Catalyst",
+    "rarity": 4,
+    "avatar_id": "10000127",
+    "scaling_attribute": "ATK_",
+    "scaling_stat": "ATK_",
+    "ascension_stat": "atk_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.06,
+      0.12,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 811.494,
+      "atk_base": 18.52032,
+      "def_base": 48.64125
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Somnia": {
+    "name": "Somnia",
+    "display_name": "Somnia",
+    "element": "Electro",
+    "weapon_type": "Catalyst",
+    "rarity": 5,
+    "avatar_id": null,
+    "scaling_attribute": "EM",
+    "scaling_stat": "ELEMENTAL_MASTERY",
+    "ascension_stat": "eleMas",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      28.799999237060547,
+      57.599998474121094,
+      57.599998474121094,
+      86.4000015258789,
+      115.19999694824219
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 806.5087280273438,
+      "atk_base": 23.274999618530273,
+      "def_base": 49.06060028076172
+    },
+    "region": null,
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  }
+}

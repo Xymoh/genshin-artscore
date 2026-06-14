@@ -20,6 +20,29 @@ export const ELEMENT_COLORS: Record<GenshinElement, string> = {
   Geo: "#f59e0b",
 };
 
+export interface CharacterWeapon {
+  name: string;
+  icon: string;
+  level: number;
+  refinement: number;
+  rarity: number;
+  mainStat: { name: string; value: string };
+  substat: { name: string; value: string };
+}
+
+export interface CharacterStats {
+  maxHp: number;
+  atk: number;
+  def: number;
+  elementalMastery: number;
+  critRate: number;
+  critDmg: number;
+  energyRecharge: number;
+  elementalDmg: number;
+  /** Raw fightPropMap from Enka for any extra stats */
+  raw: Record<string, number>;
+}
+
 export interface CharacterData {
   id: string;
   avatarId: number;
@@ -28,9 +51,14 @@ export interface CharacterData {
   weaponType: string;
   level: number;
   constellation: number;
+  friendshipLevel?: number;
   talents: number[];
+  /** Talent icon suffix (extracted from character icon, e.g. "Zibai") */
+  talentIconSuffix: string;
   icon: string;
+  weapon: CharacterWeapon | null;
   artifacts: Artifact[];
+  stats: CharacterStats;
   buildScore: BuildScore;
   activeSetBonuses: string[];
 }

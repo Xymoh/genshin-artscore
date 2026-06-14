@@ -38,6 +38,8 @@ export interface EnkaAvatarInfo {
   fightPropMap?: Record<string, number>;
   skillDepotId?: number;
   inherentProudSkillList?: number[];
+  /** Maps skill ID → talent level (e.g. "08901" → 9) for combat talents */
+  skillLevelMap?: Record<string, number>;
 }
 
 export interface EnkaEquip {

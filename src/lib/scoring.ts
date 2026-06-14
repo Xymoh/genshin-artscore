@@ -11,6 +11,41 @@ import {
   ELEMENT_DMG_MAP,
 } from "./constants";
 import characterBuildsData from "../data/character-builds.json";
+import goProcessedData from "../../genshin_optimizer_processed_data.json";
+
+// ── Character entry shape from the GO processed data ───────────────
+interface GOCharacterEntry {
+  name: string;
+  display_name: string;
+  element: string;
+  weapon_type: string;
+  rarity: number;
+  avatar_id: string | null;
+  scaling_attribute: string;
+  scaling_stat: string;
+  ascension_stat: string;
+  ascension_bonus_curve: number[];
+  substat_weights: ScoringWeights | null;
+  main_stats_ideal: CharacterBuildConfig["main_stats_ideal"] | null;
+  recommended_sets: string[];
+  er_threshold: number | null;
+  base_stats: { hp_base: number | null; atk_base: number | null; def_base: number | null };
+  region: string | null;
+  source: string;
+  data_version: string;
+}
+
+type GOProcessedData = Record<string, GOCharacterEntry>;
+
+const GO_DATA = goProcessedData as GOProcessedData;
+
+// ── Build avatar-id → GO entry lookup ──────────────────────────────
+const goByAvatarId = new Map<string, GOCharacterEntry>();
+for (const entry of Object.values(GO_DATA)) {
+  if (entry.avatar_id) {
+    goByAvatarId.set(entry.avatar_id, entry);
+  }
+}
 
 const DEFAULT_WEIGHTS: ScoringWeights = {
   CRIT_RATE: 1.0,
@@ -98,8 +133,80 @@ function resolveWeightKey(statKey: string): keyof ScoringWeights | null {
 }
 
 function getBuildConfig(avatarId: number): CharacterBuildConfig | null {
+  const idStr = String(avatarId);
+
+  // ── 1. Primary: GO processed data (authoritative + merged build configs) ──
+  const goEntry = goByAvatarId.get(idStr);
+  if (goEntry?.substat_weights) {
+    return {
+      name: goEntry.display_name,
+      substat_weights: goEntry.substat_weights,
+      main_stats_ideal: goEntry.main_stats_ideal ?? {},
+      recommended_sets: goEntry.recommended_sets,
+      er_threshold: goEntry.er_threshold ?? undefined,
+    };
+  }
+
+  // ── 2. Fallback: GO data is present but build config is not filled yet ──
+  //    We still return metadata-rich info so that the scoring can use default
+  //    weights informed by the character's scaling_attribute.
+  if (goEntry) {
+    return {
+      name: goEntry.display_name,
+      substat_weights: deriveWeightsFromScaling(goEntry),
+      main_stats_ideal: {},
+      recommended_sets: [],
+      er_threshold: undefined,
+    };
+  }
+
+  // ── 3. Legacy fallback: old character-builds.json ──
   const builds = characterBuildsData as Record<string, CharacterBuildConfig>;
-  return builds[String(avatarId)] ?? null;
+  return builds[idStr] ?? null;
+}
+
+/**
+ * Derive sensible default substat weights when no explicit build config
+ * is available.  Uses the character's ascension scaling stat to bias
+ * weights in the right direction.
+ */
+function deriveWeightsFromScaling(entry: GOCharacterEntry): ScoringWeights {
+  const weights = { ...DEFAULT_WEIGHTS };
+
+  // Every DPS-oriented character benefits from crit
+  weights.CRIT_RATE = 1.0;
+  weights.CRIT_DMG = 1.0;
+
+  switch (entry.scaling_stat) {
+    case "HP_PERCENT":
+      weights.HP_PERCENT = 0.8;
+      weights.FLAT_HP = 0.15;
+      break;
+    case "DEF_PERCENT":
+      weights.DEF_PERCENT = 0.8;
+      weights.FLAT_DEF = 0.15;
+      break;
+    case "ELEMENTAL_MASTERY":
+      weights.ELEMENTAL_MASTERY = 1.0;
+      weights.ATK_PERCENT = 0.3;
+      break;
+    case "ENERGY_RECHARGE":
+      weights.ENERGY_RECHARGE = 0.8;
+      weights.ATK_PERCENT = 0.4;
+      break;
+    case "HEALING_BONUS":
+      weights.HEALING_BONUS = 0.7;
+      weights.HP_PERCENT = 0.6;
+      weights.ATK_PERCENT = 0.4;
+      break;
+    default:
+      // ATK_PERCENT, CRIT_RATE, CRIT_DMG, elemental DMG → ATK scaling
+      weights.ATK_PERCENT = 0.7;
+      weights.FLAT_ATK = 0.15;
+      break;
+  }
+
+  return weights;
 }
 
 export function computeWSE(substats: ArtifactSubstat[], avatarId: number): number {
@@ -191,12 +298,19 @@ export function scoreArtifact(
   avatarId: number,
 ): Artifact {
   const config = getBuildConfig(avatarId);
-  const weights = config?.substat_weights ?? DEFAULT_WEIGHTS;
+  const weights = { ...(config?.substat_weights ?? DEFAULT_WEIGHTS) };
+
+  // ── Main stat exclusion (Fribbels-style) ──
+  // If the main stat is a weighted stat, it CANNOT appear as a substat.
+  // Zero out its weight so the piece isn't penalized for missing an impossible substat.
+  const mainStatWeightKey = resolveWeightKey(artifact.mainStat.statKey);
+  if (mainStatWeightKey && weights[mainStatWeightKey] !== undefined) {
+    weights[mainStatWeightKey] = 0;
+  }
 
   let fribbelsScore = 0;
   // Fribbels uses 6.48 in HSR. But for Genshin, using 7.8 (the max CV of a single roll)
   // maps the raw score precisely out to the community recognized "Crit Value equivalent".
-  // This means a piece with only Crit stats will have a score identical to its CV.
   const FRIBBELS_CONSTANT = 7.8;
 
   for (const sub of artifact.substats) {
@@ -256,10 +370,44 @@ export function scoreBuild(character: CharacterData): BuildScore {
     return { total: 0, grade: "F", artifactCount: 0 };
   }
 
-  const total = character.artifacts.reduce((sum, art) => sum + art.score.total, 0) / artifactCount;
+  const avgScore = character.artifacts.reduce((sum, art) => sum + art.score.total, 0) / artifactCount;
+
+  // ── Set bonus multiplier ──
+  // Reward builds that use the character's recommended artifact sets.
+  let setMultiplier = 1.0;
+  const config = getBuildConfig(character.avatarId);
+  if (config?.recommended_sets && config.recommended_sets.length > 0) {
+    // Count pieces per set
+    const setCounts = new Map<string, number>();
+    for (const art of character.artifacts) {
+      setCounts.set(art.setId, (setCounts.get(art.setId) ?? 0) + 1);
+    }
+
+    // Check how many pieces match recommended sets
+    const matchingCount = config.recommended_sets.reduce((sum, setId) =>
+      sum + (setCounts.get(setId) ?? 0), 0
+    );
+
+    // Check if the character has any 4pc set at all
+    const hasAny4pc = Array.from(setCounts.values()).some(c => c >= 4);
+
+    if (matchingCount >= 4) {
+      setMultiplier = 1.0;   // 4pc of recommended set — full score
+    } else if (matchingCount >= 2) {
+      setMultiplier = 0.93;  // 2pc of recommended set
+    } else if (hasAny4pc) {
+      setMultiplier = 0.88;  // 4pc of some set (not recommended but still complete)
+    } else if (matchingCount > 0) {
+      setMultiplier = 0.85;  // 1 pc match
+    } else {
+      setMultiplier = 0.82;  // No matching pieces at all
+    }
+  }
+
+  const total = Math.round(avgScore * setMultiplier * 10) / 10;
 
   return {
-    total: Math.round(total * 10) / 10,
+    total,
     grade: getGrade(total),
     artifactCount,
   };

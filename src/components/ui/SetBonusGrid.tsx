@@ -67,8 +67,7 @@ export function SetBonusGrid({ artifacts, activeSetBonuses }: SetBonusGridProps)
         {activeSetBonuses.map((setId) => {
           const count = setCounts.get(setId) ?? 0;
           const color = setColors.get(setId) ?? "#6b7280";
-          const name = ARTIFACTS[setId]?.name ?? `Set ${setId}`;
-
+          const name = ARTIFACTS[setId]?.name;
           const bonuses: string[] = [];
           if (count >= 4) bonuses.push("4‑pc");
           if (count >= 2) bonuses.push("2‑pc");
@@ -79,7 +78,7 @@ export function SetBonusGrid({ artifacts, activeSetBonuses }: SetBonusGridProps)
               className="text-[10px] px-2 py-0.5 rounded-full border font-medium"
               style={{ borderColor: color, color }}
             >
-              {name} ({bonuses.join(" + ")})
+              {name ?? `Set (${bonuses.join(" + ")})`}
             </span>
           );
         })}

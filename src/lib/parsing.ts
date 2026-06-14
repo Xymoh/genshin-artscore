@@ -8,7 +8,7 @@ import type {
   EnkaShowAvatarInfo,
 } from "../types/enka";
 import type { Artifact, ArtifactSlot, ArtifactMainStat, ArtifactSubstat } from "../types/artifact";
-import type { CharacterData, ShowcaseData, GenshinElement } from "../types/character";
+import type { CharacterData, CharacterWeapon, CharacterStats, ShowcaseData, GenshinElement } from "../types/character";
 import { SLOT_MAP, SLOT_ORDER } from "./constants";
 import statKeysData from "../data/stat-keys.json";
 import charactersData from "../data/characters.json";
@@ -20,6 +20,20 @@ import { computeRollQuality, getMaxRoll } from "./scoring";
 const STAT_KEYS = statKeysData as Record<string, { displayName: string; shortName: string; isPercentage: boolean }>;
 const CHARACTERS = charactersData as Record<string, { name: string; element: string; weapon: string; icon: string }>;
 const ARTIFACTS = artifactsData as Record<string, { name: string; pieces: number }>;
+
+// ── Weapon name lookup (from flat.nameTextMapHash) ──
+// We try to resolve the hash to a readable name using known patterns
+function resolveWeaponName(flat: EnkaEquip["flat"]): string {
+  // The icon contains a readable suffix like "Sword_Ayus" → "Light of Foliar Incision"
+  // We extract it from icon for display fallback
+  const match = flat.icon.match(/UI_EquipIcon_(.+)/);
+  if (match) {
+    const raw = match[1];
+    // Convert CamelCase/underscore to readable: "Sword_Ayus" → "Sword Ayus"
+    return raw.replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
+  }
+  return "Unknown Weapon";
+}
 
 /**
  * Map Enka equipType enum string → our ArtifactSlot.
@@ -39,25 +53,61 @@ function resolveStatName(propId: string): { displayName: string; shortName: stri
   return STAT_KEYS[propId] ?? { displayName: propId, shortName: propId, isPercentage: false };
 }
 
-// ── Element detection from fightPropMap for fallback characters ──
+// ── FightProp numeric ID mapping (Enka API uses numeric string keys) ──
 
-const DMG_BONUS_PROPS: Record<string, GenshinElement> = {
-  FIGHT_PROP_FIRE_ADD_HURT: "Pyro",
-  FIGHT_PROP_ELEC_ADD_HURT: "Electro",
-  FIGHT_PROP_WATER_ADD_HURT: "Hydro",
-  FIGHT_PROP_WIND_ADD_HURT: "Anemo",
-  FIGHT_PROP_ICE_ADD_HURT: "Cryo",
-  FIGHT_PROP_ROCK_ADD_HURT: "Geo",
-  FIGHT_PROP_GRASS_ADD_HURT: "Dendro",
+const FIGHT_PROP_IDS: Record<string, string> = {
+  "1": "FIGHT_PROP_BASE_HP",
+  "2": "FIGHT_PROP_HP",
+  "3": "FIGHT_PROP_HP_PERCENT",
+  "4": "FIGHT_PROP_BASE_ATTACK",
+  "5": "FIGHT_PROP_ATTACK",
+  "6": "FIGHT_PROP_ATTACK_PERCENT",
+  "7": "FIGHT_PROP_BASE_DEFENSE",
+  "8": "FIGHT_PROP_DEFENSE",
+  "9": "FIGHT_PROP_DEFENSE_PERCENT",
+  "20": "FIGHT_PROP_CRITICAL",
+  "22": "FIGHT_PROP_CRITICAL_HURT",
+  "23": "FIGHT_PROP_ELEMENT_MASTERY",
+  "26": "FIGHT_PROP_CHARGE_EFFICIENCY",
+  "28": "FIGHT_PROP_HEAL_ADD",
+  "29": "FIGHT_PROP_HEALED_ADD",
+  "31": "FIGHT_PROP_PHYSICAL_ADD_HURT",
+  "41": "FIGHT_PROP_FIRE_ADD_HURT",
+  "42": "FIGHT_PROP_ELEC_ADD_HURT",
+  "43": "FIGHT_PROP_WATER_ADD_HURT",
+  "44": "FIGHT_PROP_GRASS_ADD_HURT",
+  "45": "FIGHT_PROP_WIND_ADD_HURT",
+  "46": "FIGHT_PROP_ROCK_ADD_HURT",
+  "47": "FIGHT_PROP_ICE_ADD_HURT",
+};
+
+/** Try both numeric and FIGHT_PROP_ string keys from the fightPropMap */
+function fpVal(fp: Record<string, number>, numKey: string, strKey: string): number {
+  return fp[numKey] ?? fp[strKey] ?? 0;
+}
+
+/** Elemental DMG prop IDs → element mapping */
+const DMG_BONUS_PROP_IDS: Record<string, GenshinElement> = {
+  "41": "Pyro",
+  "42": "Electro",
+  "43": "Hydro",
+  "45": "Anemo",
+  "47": "Cryo",
+  "46": "Geo",
+  "44": "Dendro",
 };
 
 function detectElement(fightPropMap: Record<string, number> | undefined): GenshinElement {
-  if (!fightPropMap) return "Pyro"; // fallback
-  // Check for elemental DMG bonus entry — native element gets base bonus
-  for (const [prop, element] of Object.entries(DMG_BONUS_PROPS)) {
-    if (fightPropMap[prop] !== undefined) return element;
+  if (!fightPropMap) return "Pyro";
+  for (const [propId, element] of Object.entries(DMG_BONUS_PROP_IDS)) {
+    if ((fightPropMap[propId] ?? 0) > 0) return element;
   }
   return "Pyro";
+}
+
+/** Map a numeric/string prop ID to its FIGHT_PROP name, or return as-is */
+function resolvePropId(rawId: string): string {
+  return FIGHT_PROP_IDS[rawId] ?? rawId;
 }
 
 // ── Substat building ──
@@ -102,14 +152,42 @@ function buildMainStat(flat: EnkaEquip["flat"]): ArtifactMainStat | null {
   };
 }
 
+// ── Enka icon number → internal game set ID mapping ──
+// The Enka API may return flat.setId OR the icon URL with a "UI_RelicIcon_XXXXX_Y" pattern.
+// Both sources may use icon numbers (150XX) instead of internal game IDs (14XXX).
+// This map converts icon numbers to the internal IDs used in artifacts.json.
+const ICON_TO_SET_ID: Record<string, string> = {
+  "15001": "14001", "15002": "14002", "15003": "14003", "15004": "14004",
+  "15005": "14005", "15006": "14006", "15007": "14007", "15008": "14008",
+  "15009": "14009", "15010": "14010", "15011": "14011", "15012": "14012",
+  "15013": "14013", "15014": "14014", "15015": "14015", "15016": "14016",
+  "15017": "14017",
+  // 4-star filler sets (icon numbers 15018–15031)
+  "15018": "15018", "15019": "15019", "15020": "15020", "15021": "15021",
+  "15022": "15022", "15023": "15023", "15024": "15024", "15025": "15025",
+  "15026": "15026", "15027": "15027", "15028": "15028", "15029": "15029",
+  "15030": "15030", "15031": "15031",
+  // 5-star Inazuma + newer sets
+  "15032": "14018", "15033": "14019", "15034": "14020",
+  "15035": "14021", "15036": "14022", "15037": "14023", "15038": "14024",
+  "15039": "14025", "15040": "14026", "15041": "14027", "15042": "14028",
+  "15043": "14029", "15044": "14030", "15045": "14031", "15046": "14032",
+  "15047": "14033", "15048": "14034", "15049": "14035", "15050": "14036",
+};
+
 // ── Set ID extraction ──
 
 function extractSetId(flat: EnkaEquip["flat"]): string {
-  // Prefer flat.setId (exists in many API responses)
-  if (flat.setId) return flat.setId;
-  // Fallback: regex from icon
-  const match = flat.icon.match(/UI_RelicIcon_(\d+)_/);
-  return match ? match[1] : "0";
+  // Get raw ID: prefer flat.setId, fallback to icon regex
+  let rawId: string;
+  if (flat.setId) {
+    rawId = flat.setId;
+  } else {
+    const match = flat.icon.match(/UI_RelicIcon_(\d+)_/);
+    rawId = match ? match[1] : "0";
+  }
+  // Always try to map through ICON_TO_SET_ID, then return as-is if not found
+  return ICON_TO_SET_ID[rawId] ?? rawId;
 }
 
 // ── Artifact check ──
@@ -134,7 +212,7 @@ function getCharacterElement(avatarId: number, fightPropMap?: Record<string, num
   return detectElement(fightPropMap);
 }
 
-function getCharacterWeapon(avatarId: number): string {
+function getCharacterWeaponType(avatarId: number): string {
   return CHARACTERS[String(avatarId)]?.weapon ?? "Unknown";
 }
 
@@ -142,10 +220,165 @@ function getCharacterIcon(avatarId: number): string {
   return CHARACTERS[String(avatarId)]?.icon ?? "";
 }
 
+/** Extract the icon suffix from avatar icon (e.g. "UI_AvatarIcon_Zibai" → "Zibai") */
+function getTalentIconSuffix(avatarId: number): string {
+  const icon = getCharacterIcon(avatarId);
+  const match = icon.match(/UI_AvatarIcon_(.+)/);
+  return match ? match[1] : String(avatarId);
+}
+
 // ── Character catalog check ──
 
 function isCharacterKnown(avatarId: number): boolean {
   return CHARACTERS[String(avatarId)] !== undefined;
+}
+
+// ── Fight prop stat extraction ──
+// Enka fightPropMap uses numeric string keys ("1","20") OR FIGHT_PROP_ strings.
+//
+// HP/ATK/DEF: stored as COMPONENTS (base + percent + flat).
+//   Keys 1/4/7 = base, 2/5/8 = flat added, 3/6/9 = % bonus (decimal, e.g. 0.466 = 46.6%)
+//   Formula: final = base * (1 + percent) + flat
+//
+// CRIT / ER / Elemental DMG: stored as FINAL values already including character base.
+//   Keys 20/22/26 = final decimals (NO base added). e.g. 0.592 = 59.2% CRIT Rate (includes base 5%).
+//   Key 23 = Elemental Mastery (flat integer).
+
+/**
+ * Compute total EM from artifact substats when fightPropMap lacks it.
+ */
+function computeEMFromArtifacts(artifacts: Artifact[]): number {
+  let em = 0;
+  for (const art of artifacts) {
+    for (const sub of art.substats) {
+      if (sub.statKey === "FIGHT_PROP_ELEMENT_MASTERY") {
+        em += sub.value;
+      }
+    }
+  }
+  return Math.round(em);
+}
+
+function computeStats(fightPropMap: Record<string, number> | undefined, artifacts?: Artifact[]): CharacterStats {
+  const fp = fightPropMap ?? {};
+
+  // ── HP: component formula ──
+  const baseHp = fpVal(fp, "1", "FIGHT_PROP_BASE_HP");
+  const flatHp = fpVal(fp, "2", "FIGHT_PROP_HP");
+  // HP% may be split across multiple keys (base HP% + set bonus HP%).
+  // Try: key 3 (standard HP%), key 10 (alternate HP% source), key 0 (total HP%).
+  const hpPercent = fpVal(fp, "3", "FIGHT_PROP_HP_PERCENT")
+    || fpVal(fp, "10", "FIGHT_PROP_HP_PERCENT");
+  const maxHp = Math.round(baseHp * (1 + hpPercent) + flatHp);
+
+  // ── ATK: component formula ──
+  const baseAtk = fpVal(fp, "4", "FIGHT_PROP_BASE_ATTACK");
+  const flatAtk = fpVal(fp, "5", "FIGHT_PROP_ATTACK");
+  const atkPercent = fpVal(fp, "6", "FIGHT_PROP_ATTACK_PERCENT");
+  const atk = Math.round(baseAtk * (1 + atkPercent) + flatAtk);
+
+  // ── DEF: component formula ──
+  const baseDef = fpVal(fp, "7", "FIGHT_PROP_BASE_DEFENSE");
+  const flatDef = fpVal(fp, "8", "FIGHT_PROP_DEFENSE");
+  const defPercent = fpVal(fp, "9", "FIGHT_PROP_DEFENSE_PERCENT");
+  const def = Math.round(baseDef * (1 + defPercent) + flatDef);
+
+  // ── CRIT Rate/DMG: FINAL values (no base added) ──
+  const critRate = parseFloat((fpVal(fp, "20", "FIGHT_PROP_CRITICAL") * 100).toFixed(1));
+  const critDmg = parseFloat((fpVal(fp, "22", "FIGHT_PROP_CRITICAL_HURT") * 100).toFixed(1));
+
+  // ── Elemental Mastery / Energy Recharge ──
+  // In some Enka responses, EM and ER keys are swapped:
+  //   key "23" may hold ER (decimal ~1-3) and EM is in key "28".
+  // We detect by value range: EM is 0-1000 (integer-like), ER is 1.0-3.0 (decimal).
+  const raw23 = fpVal(fp, "23", "FIGHT_PROP_ELEMENT_MASTERY");
+  const raw26 = fpVal(fp, "26", "FIGHT_PROP_CHARGE_EFFICIENCY");
+  const raw28 = fpVal(fp, "28", "FIGHT_PROP_ELEMENT_MASTERY");
+
+  let em: number;
+  let erRaw: number;
+
+  if (raw23 > 0.9 && raw23 < 10) {
+    // raw23 is actually ER (decimal 1.0–3.0), EM is in key 28 or 0
+    em = Math.round(raw28);
+    erRaw = raw23;
+  } else {
+    // Standard mapping: raw23 is EM, raw26 is ER
+    em = Math.round(raw23);
+    erRaw = raw26;
+  }
+
+  // EM artifact fallback
+  if (em < 10 && artifacts && artifacts.length > 0) {
+    const fromArts = computeEMFromArtifacts(artifacts);
+    if (fromArts > 10) em = fromArts;
+  }
+
+  const er = parseFloat((erRaw * 100).toFixed(1));
+
+  // ── Elemental DMG Bonus ──
+  const dmgKeys = [
+    { n: "31", s: "FIGHT_PROP_PHYSICAL_ADD_HURT" },
+    { n: "41", s: "FIGHT_PROP_FIRE_ADD_HURT" },
+    { n: "42", s: "FIGHT_PROP_ELEC_ADD_HURT" },
+    { n: "43", s: "FIGHT_PROP_WATER_ADD_HURT" },
+    { n: "44", s: "FIGHT_PROP_GRASS_ADD_HURT" },
+    { n: "45", s: "FIGHT_PROP_WIND_ADD_HURT" },
+    { n: "46", s: "FIGHT_PROP_ROCK_ADD_HURT" },
+    { n: "47", s: "FIGHT_PROP_ICE_ADD_HURT" },
+  ];
+  let elementalDmg = 0;
+  for (const { n, s } of dmgKeys) {
+    const v = fpVal(fp, n, s);
+    if (v > 0) { elementalDmg = parseFloat((v * 100).toFixed(1)); break; }
+  }
+
+  return { maxHp, atk, def, elementalMastery: em, critRate, critDmg, energyRecharge: er, elementalDmg, raw: fp };
+}
+
+// ── Weapon extraction ──
+
+function extractWeapon(equips: EnkaEquip[]): CharacterWeapon | null {
+  for (const equip of equips) {
+    if (equip.flat.itemType !== "ITEM_WEAPON") continue;
+    const { flat, weapon } = equip;
+    const icon = flat.icon || "";
+
+    // Main stat (base ATK) — flat value, no multiplication needed
+    const mainStatValue = flat.weaponStats?.find(
+      (s) => s.appendPropId === "FIGHT_PROP_BASE_ATTACK",
+    );
+    const mainStatName = "ATK";
+    const mainStatDisplay = mainStatValue ? String(Math.round(mainStatValue.statValue)) : "?";
+
+    // Substat (second stat, typically ATK%, CRIT, etc.)
+    // Weapon stat values from Enka are already in display format (e.g. 33.1 for 33.1% CRIT Rate)
+    const substats = flat.weaponStats ?? [];
+    const substat = substats.find((s) => s.appendPropId !== "FIGHT_PROP_BASE_ATTACK");
+    const substatMeta = substat ? STAT_KEYS[substat.appendPropId] : null;
+    const substatName = substatMeta?.displayName ?? (substat?.appendPropId ?? "—");
+    const substatDisplay = substat
+      ? substatMeta?.isPercentage
+        ? `${substat.statValue.toFixed(1)}%`
+        : String(Math.round(substat.statValue))
+      : "—";
+
+    // affixMap values are 0-indexed (0 = R1, 4 = R5)
+    const refinement = weapon?.affixMap
+      ? (Object.values(weapon.affixMap)[0] ?? 0) + 1
+      : 1;
+
+    return {
+      name: resolveWeaponName(flat),
+      icon,
+      level: weapon?.level ?? 1,
+      refinement,
+      rarity: flat.rankLevel,
+      mainStat: { name: mainStatName, value: mainStatDisplay },
+      substat: { name: substatName, value: substatDisplay },
+    };
+  }
+  return null;
 }
 
 // ═══════════════════════════════════════════
@@ -194,13 +427,16 @@ function parseCharacter(
 
   const equips = avatar.equipList ?? [];
   const artifacts: Artifact[] = [];
+  let weapon: CharacterWeapon | null = null;
 
   for (const equip of equips) {
-    if (!isArtifact(equip.flat)) continue;
-
-    const artifact = parseArtifact(equip);
-    if (artifact) {
-      artifacts.push(artifact);
+    if (isArtifact(equip.flat)) {
+      const artifact = parseArtifact(equip);
+      if (artifact) {
+        artifacts.push(artifact);
+      }
+    } else if (equip.flat.itemType === "ITEM_WEAPON") {
+      weapon = extractWeapon([equip]);
     }
   }
 
@@ -209,14 +445,51 @@ function parseCharacter(
 
   artifacts.sort((a, b) => a.slotIndex - b.slotIndex);
 
-  // Constellation count from talent unlock list (constIdList)
-  const constellation = (avatar.constIdList ?? []).length;
+  // Constellation count: prefer constIdList, fallback to talentIdList
+  // (some Enka responses put constellation talent IDs in talentIdList)
+  const constIdList = avatar.constIdList ?? [];
+  let constellation = constIdList.length;
+  if (constellation === 0 && avatar.talentIdList && avatar.talentIdList.length > 0) {
+    // talentIdList may contain constellation talent IDs (not talent levels)
+    // Talent levels come from inherentProudSkillList, so if that exists,
+    // talentIdList likely holds constellation data instead
+    if (avatar.inherentProudSkillList && avatar.inherentProudSkillList.length > 0) {
+      constellation = avatar.talentIdList.length;
+    }
+  }
 
   // Level comes from showAvatarInfoList (player-controlled), fallback to avatar prop
   const charLevel = showInfo?.level ?? avatar.level ?? 0;
 
-  // Talents: preferred from avatar.talentIdList, else derive from skillLevelMap
-  const talents = avatar.talentIdList ?? [];
+  // Talents: prefer skillLevelMap (gives actual combat talent levels 1-15),
+  // fallback to inherentProudSkillList, then talentIdList
+  // skillLevelMap keys are skill depot derived IDs; the 3 combat talents
+  // are typically the first 3 sorted entries
+  let talents: number[] = [];
+  if (avatar.skillLevelMap) {
+    const levels = Object.values(avatar.skillLevelMap)
+      .slice(0, 3)
+      .map((v) => Math.round(v));
+    if (levels.length > 0) {
+      talents = levels;
+    }
+  }
+  if (talents.length === 0) {
+    // Fallback: inherentProudSkillList may contain raw IDs,
+    // extract last 1-2 digits as talent level
+    const raw = avatar.inherentProudSkillList ?? avatar.talentIdList ?? [];
+    talents = raw.slice(0, 3).map((id) => {
+      // IDs like 892101 → level 01 (last 2 digits), or just last digit
+      const str = String(id);
+      if (str.length >= 2) {
+        const lastTwo = str.slice(-2);
+        const parsed = parseInt(lastTwo, 10);
+        if (!isNaN(parsed) && parsed > 0) return parsed;
+      }
+      const lastOne = str.slice(-1);
+      return parseInt(lastOne, 10) || 0;
+    });
+  }
 
   // Compute active set bonuses
   const setCounts = new Map<string, number>();
@@ -233,12 +506,15 @@ function parseCharacter(
     avatarId,
     name: getCharacterName(avatarId),
     element: getCharacterElement(avatarId, avatar.fightPropMap),
-    weaponType: getCharacterWeapon(avatarId),
+    weaponType: getCharacterWeaponType(avatarId),
     level: charLevel,
     constellation,
     talents,
+    talentIconSuffix: getTalentIconSuffix(avatarId),
     icon: getCharacterIcon(avatarId),
+    weapon,
     artifacts,
+    stats: computeStats(avatar.fightPropMap, artifacts),
     buildScore: { total: 0, grade: "F", artifactCount: artifacts.length },
     activeSetBonuses,
   };
@@ -252,7 +528,7 @@ function parseArtifact(equip: EnkaEquip): Artifact | null {
 
   const slot = mapSlot(flat.equipType as EquipType);
   const setId = extractSetId(flat);
-  const setName = ARTIFACTS[setId]?.name ?? `Set ${setId}`;
+  const setName = ARTIFACTS[setId]?.name ?? "";
 
   // Use flat.reliquarySubstats directly (string appendPropId values)
   const substats = buildSubstats(flat.reliquarySubstats);

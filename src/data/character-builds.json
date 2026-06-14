@@ -1125,15 +1125,15 @@
       "CRIT_RATE": 0,
       "CRIT_DMG": 0,
       "ATK_PERCENT": 0,
-      "HP_PERCENT": 1,
+      "HP_PERCENT": 1.0,
       "DEF_PERCENT": 0,
       "ELEMENTAL_MASTERY": 0.1,
-      "ENERGY_RECHARGE": 0.8,
+      "ENERGY_RECHARGE": 1.1,
       "HEALING_BONUS": 0.5,
       "PHYSICAL_DMG": 0,
       "ELEMENTAL_DMG": 0,
       "FLAT_ATK": 0,
-      "FLAT_HP": 0.3,
+      "FLAT_HP": 0.6,
       "FLAT_DEF": 0
     },
     "main_stats_ideal": {
@@ -1582,5 +1582,30 @@
       "14035"
     ],
     "er_threshold": 160
+  },
+  "10000126": {
+    "name": "Zibai",
+    "substat_weights": {
+      "CRIT_RATE": 1.0,
+      "CRIT_DMG": 1.0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.75,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.15
+    },
+    "main_stats_ideal": {
+      "SANDS": ["DEF_PERCENT"],
+      "GOBLET": ["DEF_PERCENT", "GEO_DMG"],
+      "CIRCLET": ["CRIT_DMG", "CRIT_RATE"]
+    },
+    "recommended_sets": ["14036", "14027", "14024"],
+    "er_threshold": 120
   }
 }

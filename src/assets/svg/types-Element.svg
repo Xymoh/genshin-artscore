@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clipElem)">
+    <!-- Diamond/crystal shape -->
+    <path d="M8 0.5L15 5L8 9.5L1 5L8 0.5Z" stroke="white" stroke-width="1.2" fill="white" fill-opacity="0.15"/>
+    <path d="M1 5L8 9.5V15.5L1 11V5Z" stroke="white" stroke-width="1.2" fill="white" fill-opacity="0.3"/>
+    <path d="M15 5L8 9.5V15.5L15 11V5Z" stroke="white" stroke-width="1.2" fill="white" fill-opacity="0.45"/>
+    <!-- Inner glow -->
+    <circle cx="8" cy="9.5" r="2" fill="white" fill-opacity="0.25"/>
+    <circle cx="8" cy="9.5" r="1" fill="white" fill-opacity="0.5"/>
+  </g>
+  <defs>
+    <clipPath id="clipElem">
+      <rect width="16" height="16" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
