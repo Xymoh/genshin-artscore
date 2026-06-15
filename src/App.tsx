@@ -16,9 +16,10 @@ const queryClient = new QueryClient({
 });
 
 export function App() {
+  const basename = import.meta.env.BASE_URL;
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />

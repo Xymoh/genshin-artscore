@@ -160,6 +160,7 @@ function enkaProxyPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: "/genshin-artscore/",
   plugins: [react(), enkaProxyPlugin()],
   resolve: {
     alias: {
