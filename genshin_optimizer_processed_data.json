@@ -4750,10 +4750,37 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1.0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.2,
+      "ENERGY_RECHARGE": 1.0,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 1143.984,
       "atk_base": 7.448,

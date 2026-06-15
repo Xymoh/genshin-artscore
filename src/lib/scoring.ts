@@ -223,9 +223,10 @@ function getBuildConfig(avatarId: number): CharacterBuildConfig | null {
 function deriveWeightsFromScaling(entry: GOCharacterEntry): ScoringWeights {
   const weights = { ...DEFAULT_WEIGHTS };
 
-  // Every DPS-oriented character benefits from crit
+  // Every character benefits from crit and some ER
   weights.CRIT_RATE = 1.0;
   weights.CRIT_DMG = 1.0;
+  weights.ENERGY_RECHARGE = 0.4; // Baseline ER value for all characters
 
   switch (entry.scaling_stat) {
     case "HP_PERCENT":
