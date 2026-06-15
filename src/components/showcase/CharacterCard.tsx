@@ -64,7 +64,7 @@ function StatRow({ label, value, icon }: { label: string; value: number; icon?: 
         {icon && <img src={icon} alt="" className="w-4 h-4 flex-shrink-0 opacity-70" />}
         <span className="text-dark-muted truncate text-xs sm:text-sm">{label}</span>
       </div>
-      <span className="text-white font-mono font-semibold text-xs sm:text-sm tabular-nums flex-shrink-0">
+      <span className="text-dark-text font-mono font-semibold text-xs sm:text-sm tabular-nums flex-shrink-0">
         {formatStatValue(label, value)}
       </span>
     </div>
@@ -160,7 +160,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                 >
                   {character.element.substring(0, 2).toUpperCase()}
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide truncate max-w-[180px] sm:max-w-none">
+                <h3 className="text-lg sm:text-xl font-bold text-dark-text tracking-wide truncate max-w-[180px] sm:max-w-none">
                   {character.name}
                 </h3>
                 {/* Grade badge inline */}
@@ -172,17 +172,17 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                 </span>
               </div>
               <div className="flex flex-wrap items-center gap-1.5 text-xs font-medium text-dark-muted">
-                <span className="px-1.5 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-white/90">
+                <span className="px-1.5 py-0.5 rounded bg-dark-card border border-dark-border/60 text-dark-text/90">
                   Lv. {character.level}
                 </span>
                 <span className={`px-1.5 py-0.5 rounded border ${character.constellation > 0 ? "bg-accent/20 border-accent/30 text-accent" : "bg-dark-bg/80 border-dark-border/60 text-dark-muted"}`}>
                   C{character.constellation}
                 </span>
-                <span className="px-1.5 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-white/90 hidden sm:inline-block">
+                <span className="px-1.5 py-0.5 rounded bg-dark-card border border-dark-border/60 text-dark-text/90 hidden sm:inline-block">
                   {character.weaponType}
                 </span>
                 {/* Score on mobile inline */}
-                <span className="inline sm:hidden font-mono font-bold text-white/90">
+                <span className="inline sm:hidden font-mono font-bold text-dark-text/90">
                   {character.buildScore.total.toFixed(1)}
                   <span className="text-dark-muted font-extrabold ml-0.5" style={{ color: gradeColor }}>{character.buildScore.grade}</span>
                 </span>
@@ -193,13 +193,13 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
           {/* Right side: score on desktop + expand arrow */}
           <div className="flex items-center gap-3 drop-shadow-md">
             <div className="text-right hidden sm:flex flex-col items-end">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-white/60 mb-0.5">Build Score</span>
+              <span className="text-[10px] uppercase font-bold tracking-wider text-dark-muted mb-0.5">Build Score</span>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-lg font-bold text-white">{character.buildScore.total.toFixed(1)}</span>
+                <span className="font-mono text-lg font-bold text-dark-text">{character.buildScore.total.toFixed(1)}</span>
               </div>
             </div>
 
-            <div className="w-7 h-7 rounded-full bg-dark-bg/60 border border-white/20 flex items-center justify-center text-white group-hover:bg-dark-bg/80 transition-colors backdrop-blur-md shrink-0">
+            <div className="w-7 h-7 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-text group-hover:bg-dark-card-hover transition-colors backdrop-blur-md shrink-0">
               <svg
                 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
                 className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
@@ -249,19 +249,19 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                   )}
                 </div>
                 <div>
-                  <div className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                  <div className="text-base sm:text-lg font-bold text-dark-text flex items-center gap-2">
                     {character.name}
                     <span className="text-xs font-extrabold px-1.5 py-0.5 rounded bg-dark-bg border border-dark-border/80" style={{ color: gradeColor }}>
                       {character.buildScore.grade}
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-1">
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-white/80">Lv. {character.level}</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded bg-dark-card border border-dark-border/60 text-dark-text/80">Lv. {character.level}</span>
                     <span className={`text-xs px-1.5 py-0.5 rounded border ${character.constellation > 0 ? "bg-accent/20 border-accent/30 text-accent" : "bg-dark-bg/80 border-dark-border/60 text-dark-muted"}`}>
                       C{character.constellation}
                     </span>
                     {character.friendshipLevel !== undefined && character.friendshipLevel > 0 && (
-                      <span className="text-xs px-1.5 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-white/80 flex items-center gap-1">
+                      <span className="text-xs px-1.5 py-0.5 rounded bg-dark-card border border-dark-border/60 text-dark-text/80 flex items-center gap-1">
                         <img src={friendshipIcon} alt="" className="w-3 h-3 opacity-70" />
                         {character.friendshipLevel}
                       </span>
@@ -273,7 +273,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
               {/* Weapon card (reduced size) */}
               {character.weapon && (
                 <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-dark-border bg-dark-card min-w-0 flex-1">
-                  <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-dark-bg border border-dark-border/60 flex-shrink-0 relative overflow-hidden">
+                  <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-dark-bg icon-dark-bg border border-dark-border/60 flex-shrink-0 relative overflow-hidden">
                     {weaponIconUrl ? (
                       <img src={weaponIconUrl} alt={character.weapon.name} className="w-full h-full object-cover" loading="lazy" />
                     ) : (
@@ -285,14 +285,14 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-1">
-                      <span className="text-xs font-semibold text-white truncate">{character.weapon.name}</span>
+                      <span className="text-xs font-semibold text-dark-text truncate">{character.weapon.name}</span>
                       <span className="text-[10px] px-1 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-dark-muted">R{character.weapon.refinement}</span>
                       <span className="text-[10px] px-1 py-0.5 rounded bg-dark-bg/80 border border-dark-border/60 text-dark-muted">Lv.{character.weapon.level}</span>
                     </div>
                     <div className="flex gap-x-3 gap-y-0.5 mt-0.5 text-[11px] flex-wrap">
-                      <span className="text-dark-muted">{character.weapon.mainStat.name} <span className="text-white/90 font-mono">{character.weapon.mainStat.value}</span></span>
+                      <span className="text-dark-muted">{character.weapon.mainStat.name} <span className="text-dark-text/90 font-mono">{character.weapon.mainStat.value}</span></span>
                       {character.weapon.substat.name !== "—" && (
-                        <span className="text-dark-muted">{character.weapon.substat.name} <span className="text-white/90 font-mono">{character.weapon.substat.value}</span></span>
+                        <span className="text-dark-muted">{character.weapon.substat.name} <span className="text-dark-text/90 font-mono">{character.weapon.substat.value}</span></span>
                       )}
                     </div>
                   </div>
@@ -315,7 +315,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                     const conIcon = `${ENKA_UI_BASE}/${conFile}.png`;
                     const fallbackIcon = useU ? `${ENKA_UI_BASE}/UI_Talent_S_${character.talentIconSuffix}_0${i + 1}.png` : `${ENKA_UI_BASE}/UI_Talent_U_${character.talentIconSuffix}_0${i + 1}.png`;
                     return (
-                      <div key={i} className={`relative w-14 h-14 rounded-lg overflow-hidden border-2 flex-shrink-0 bg-dark-bg ${unlocked ? "border-accent/60" : "border-dark-border/50"}`} title={`C${i + 1}${unlocked ? "" : " (locked)"}`}>
+                      <div key={i} className={`relative w-14 h-14 rounded-lg overflow-hidden border-2 flex-shrink-0 bg-dark-bg icon-dark-bg ${unlocked ? "border-accent/60" : "border-dark-border/50"}`} title={`C${i + 1}${unlocked ? "" : " (locked)"}`}>
                         <img src={conIcon} alt={`C${i + 1}`} className="w-full h-full object-cover" loading="lazy"
                           onError={(e) => { if (e.currentTarget.src !== fallbackIcon) e.currentTarget.src = fallbackIcon; }}
                           style={{ filter: unlocked ? "none" : "brightness(0.4) saturate(0.3)" }} />
@@ -340,10 +340,10 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                     { label: "Burst", icon: `Skill_E_${character.talentIconSuffix}_01.png` },
                   ].map((t, idx) => (
                     <div key={idx} className="flex flex-col items-center gap-1">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-dark-border/40 bg-dark-bg">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-dark-border/40 bg-dark-bg icon-dark-bg">
                         <img src={`${ENKA_UI_BASE}/${t.icon}`} alt={t.label} className="w-full h-full object-cover" loading="lazy" />
                       </div>
-                      <span className="text-xs font-mono font-semibold text-white">
+                      <span className="text-xs font-mono font-semibold text-dark-text">
                         {character.talents[idx] && character.talents[idx] > 0
                           ? `${character.talents[idx]}/${TALENT_MAX}`
                           : "?"}
@@ -387,7 +387,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                       {STAT_ICONS[stat.label] && <img src={STAT_ICONS[stat.label]} alt="" className="w-4 h-4 flex-shrink-0 opacity-70" />}
                       <span className="text-sm text-dark-muted">{stat.label}</span>
                     </div>
-                    <span className="text-sm font-mono font-semibold text-white tabular-nums">
+                    <span className="text-sm font-mono font-semibold text-dark-text tabular-nums">
                       {formatStatValue(stat.label, stat.value)}
                     </span>
                   </div>
@@ -411,7 +411,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
             )}
 
             {/* Build Score Bar */}
-            <BuildScoreBar score={character.buildScore.total} grade={character.buildScore.grade} artifactCount={character.buildScore.artifactCount} />
+            <BuildScoreBar score={character.buildScore.total} grade={character.buildScore.grade} artifactCount={character.buildScore.artifactCount} correctMainStats={character.buildScore.correctMainStats} totalSelectableSlots={character.buildScore.totalSelectableSlots} setBonus={character.buildScore.setBonus} />
           </div>
         </div>
       )}

@@ -201,7 +201,7 @@ export function CharacterDetail({ character }: CharacterDetailProps) {
         </h3>
         <SetBonusRow
           artifacts={character.artifacts}
-          activeSetBonuses={character.activeSetBonuses}
+          setBonus={character.buildScore.setBonus}
         />
       </div>
 
@@ -210,6 +210,9 @@ export function CharacterDetail({ character }: CharacterDetailProps) {
         score={character.buildScore.total}
         grade={character.buildScore.grade}
         artifactCount={character.buildScore.artifactCount}
+        correctMainStats={character.buildScore.correctMainStats}
+        totalSelectableSlots={character.buildScore.totalSelectableSlots}
+        setBonus={character.buildScore.setBonus}
       />
     </div>
   );

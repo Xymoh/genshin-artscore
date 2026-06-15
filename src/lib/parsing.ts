@@ -13,6 +13,8 @@ import { SLOT_MAP, SLOT_ORDER } from "./constants";
 import statKeysData from "../data/stat-keys.json";
 import charactersData from "../data/characters.json";
 import artifactsData from "../data/artifacts.json";
+import weaponsData from "../data/weapons.json";
+import enkaLocaleData from "../data/enka-locale.json";
 import { computeRollQuality, getMaxRoll } from "./scoring";
 
 // ── Lookup tables ──
@@ -20,19 +22,44 @@ import { computeRollQuality, getMaxRoll } from "./scoring";
 const STAT_KEYS = statKeysData as Record<string, { displayName: string; shortName: string; isPercentage: boolean }>;
 const CHARACTERS = charactersData as Record<string, { name: string; element: string; weapon: string; icon: string }>;
 const ARTIFACTS = artifactsData as Record<string, { name: string; pieces: number }>;
+const WEAPONS = weaponsData as Record<string, string>;
+const ENKA_LOCALE = enkaLocaleData as Record<string, string>;
 
-// ── Weapon name lookup (from flat.nameTextMapHash) ──
-// We try to resolve the hash to a readable name using known patterns
+// ── Weapon name lookup (hash-based with icon suffix fallback) ──
+// The Enka API provides `flat.nameTextMapHash` for all equipment items.
+// We use the Enka locale data (hash → display name) as the primary source,
+// falling back to our curated weapons.json (icon suffix → name) for older data.
 function resolveWeaponName(flat: EnkaEquip["flat"]): string {
-  // The icon contains a readable suffix like "Sword_Ayus" → "Light of Foliar Incision"
-  // We extract it from icon for display fallback
+  // Primary: hash-based lookup from Enka locale data
+  if (flat.nameTextMapHash) {
+    const hashName = ENKA_LOCALE[flat.nameTextMapHash];
+    if (hashName) return hashName;
+  }
+
+  // Secondary fallback: icon suffix lookup from weapons.json
   const match = flat.icon.match(/UI_EquipIcon_(.+)/);
   if (match) {
-    const raw = match[1];
-    // Convert CamelCase/underscore to readable: "Sword_Ayus" → "Sword Ayus"
-    return raw.replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
+    const iconSuffix = match[1];
+    if (WEAPONS[iconSuffix]) {
+      return WEAPONS[iconSuffix];
+    }
+    // Final fallback: format the icon suffix as a readable name
+    return iconSuffix.replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
   }
   return "Unknown Weapon";
+}
+
+// ── Artifact set name lookup (hash-based) ──
+// Uses `flat.setNameTextMapHash` from Enka API for reliable set name resolution.
+function resolveSetName(flat: EnkaEquip["flat"]): string {
+  // Primary: hash-based lookup from Enka locale data
+  if (flat.setNameTextMapHash) {
+    const hashName = ENKA_LOCALE[flat.setNameTextMapHash];
+    if (hashName) return hashName;
+  }
+  // Fallback: use artifacts.json via set ID
+  const setId = extractSetId(flat);
+  return ARTIFACTS[setId]?.name ?? "";
 }
 
 /**
@@ -197,6 +224,11 @@ function isArtifact(flat: EnkaEquip["flat"]): boolean {
 }
 
 // ── Character name extraction ──
+// NOTE: characters.json is the authoritative source for in-game character names.
+// The Genshin Optimizer (GO) repo uses pre-release codenames (e.g. "Varka" for what
+// became "Lohen" in-game). If character names appear wrong, re-run
+// `node scripts/fetch-go-data.js` to refresh the GO processed data, and verify
+// that characters.json has the correct avatar_id → name mappings.
 
 function getCharacterName(avatarId: number): string {
   const entry = CHARACTERS[String(avatarId)];
@@ -515,7 +547,7 @@ function parseCharacter(
     weapon,
     artifacts,
     stats: computeStats(avatar.fightPropMap, artifacts),
-    buildScore: { total: 0, grade: "F", artifactCount: artifacts.length },
+    buildScore: { total: 0, grade: "F", artifactCount: artifacts.length, correctMainStats: 0, totalSelectableSlots: 0, setBonus: { activeSets: [], matchStatus: "no_recommendation" } },
     activeSetBonuses,
   };
 }
@@ -528,7 +560,7 @@ function parseArtifact(equip: EnkaEquip): Artifact | null {
 
   const slot = mapSlot(flat.equipType as EquipType);
   const setId = extractSetId(flat);
-  const setName = ARTIFACTS[setId]?.name ?? "";
+  const setName = resolveSetName(flat);
 
   // Use flat.reliquarySubstats directly (string appendPropId values)
   const substats = buildSubstats(flat.reliquarySubstats);
@@ -549,6 +581,10 @@ function parseArtifact(equip: EnkaEquip): Artifact | null {
     mainStat,
     substats,
     score: {
+      potentialPercent: 0,
+      weightedPotential: 0,
+      idealPotential: 0,
+      mainStatCorrect: true,
       rv: 0,
       cv: 0,
       cvNormalized: 0,

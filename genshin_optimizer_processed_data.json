@@ -4857,11 +4857,11 @@
     "source": "genshin-optimizer/frzyc",
     "data_version": "allStat_gen.json — master branch"
   },
-  "Varka": {
-    "name": "Varka",
-    "display_name": "Varka",
-    "element": "Anemo",
-    "weapon_type": "Claymore",
+  "Lohen": {
+    "name": "Lohen",
+    "display_name": "Lohen",
+    "element": "Cryo",
+    "weapon_type": "Polearm",
     "rarity": 5,
     "avatar_id": "10000129",
     "scaling_attribute": "Crit DMG%",
@@ -4884,6 +4884,38 @@
       "hp_base": 981.9196,
       "atk_base": 27.4645,
       "def_base": 61.92405
+    },
+    "region": "mondstadt",
+    "source": "genshin-optimizer/frzyc",
+    "data_version": "allStat_gen.json — master branch"
+  },
+  "Varka": {
+    "name": "Varka",
+    "display_name": "Varka",
+    "element": "Anemo",
+    "weapon_type": "Claymore",
+    "rarity": 5,
+    "avatar_id": "10000132",
+    "scaling_attribute": "Crit DMG%",
+    "scaling_stat": "CRIT_DMG",
+    "ascension_stat": "critDMG_",
+    "ascension_bonus_curve": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ],
+    "substat_weights": null,
+    "main_stats_ideal": null,
+    "recommended_sets": [],
+    "er_threshold": null,
+    "base_stats": {
+      "hp_base": 1100.0,
+      "atk_base": 28.0,
+      "def_base": 65.0
     },
     "region": "mondstadt",
     "source": "genshin-optimizer/frzyc",

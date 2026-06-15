@@ -34,7 +34,7 @@ export function SubstatDots({ substats }: SubstatDotsProps) {
                 <span className="w-2 h-2 rounded-full opacity-40" style={{ backgroundColor: color }} />
               )}
               {Array.from({ length: emptyDots }, (_, i) => (
-                <span key={`e-${i}`} className="w-2 h-2 rounded-full bg-white/10" />
+                <span key={`e-${i}`} className="w-2 h-2 rounded-full bg-dark-border/40" />
               ))}
             </div>
           </div>

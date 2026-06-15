@@ -678,10 +678,10 @@
     "icon": "UI_AvatarIcon_Linnea"
   },
   "10000129": {
-    "name": "Varka",
-    "element": "Anemo",
-    "weapon": "Claymore",
-    "icon": "UI_AvatarIcon_Varka"
+    "name": "Lohen",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "icon": "UI_AvatarIcon_Lohen"
   },
   "10000130": {
     "name": "Illuga",
@@ -696,10 +696,10 @@
     "icon": "UI_AvatarIcon_Nicole"
   },
   "10000132": {
-    "name": "Lohen",
-    "element": "Cryo",
-    "weapon": "Sword",
-    "icon": "UI_AvatarIcon_Lohen"
+    "name": "Varka",
+    "element": "Anemo",
+    "weapon": "Claymore",
+    "icon": "UI_AvatarIcon_Varka"
   },
   "10000133": {
     "name": "Manekin",

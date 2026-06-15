@@ -37,27 +37,57 @@ export interface ArtifactMainStat {
 }
 
 export interface ArtifactScore {
+  // New primary score
+  potentialPercent: number;  // 0–200%, Fribbels-style score (100% = solid, 200% = theoretically perfect)
+  weightedPotential: number; // raw weighted potential sum
+  idealPotential: number;    // theoretical max for this slot/mainstat/character
+
+  // Main stat evaluation
+  mainStatCorrect: boolean;
+  mainStatMultiplier: number; // kept for backward compat (1.0 if correct)
+
+  // Set bonus (informational)
+  setBonusMultiplier: number; // kept at 1.0
+
+  // Legacy fields (populated for backward compat)
   rv: number;        // Roll Value (0-100)
   cv: number;        // Crit Value (absolute)
   cvNormalized: number; // CV normalized to 0-1
   wse: number;       // Weighted Substat Efficiency (0-100)
-  mainStatMultiplier: number;
-  setBonusMultiplier: number;
-  total: number;     // Aggregate score (0-100)
+
+  // Output
+  total: number;     // = potentialPercent (unified score)
   grade: ScoreGrade;
 }
 
-export type ScoreGrade = "WTF" | "OP" | "SSS" | "SS" | "S" | "A" | "B" | "C" | "D" | "F";
+export type ScoreGrade =
+  | "F" | "F+"
+  | "D" | "D+"
+  | "C" | "C+"
+  | "B" | "B+"
+  | "A" | "A+"
+  | "S" | "S+"
+  | "SS" | "SS+"
+  | "SSS" | "SSS+"
+  | "WTF" | "WTF+";
 
 export const GRADE_COLORS: Record<ScoreGrade, string> = {
-  WTF: "#1fe03f",
-  OP: "#de3a35",
-  SSS: "#ff8c00",
-  SS: "#ffbd59",
-  S: "#ffd700",
-  A: "#a855f7",
-  B: "#3b82f6",
-  C: "#22c55e",
-  D: "#6b7280",
-  F: "#4b5563",
+  "F":    "#4b5563",
+  "F+":   "#6b7280",
+  "D":    "#6b7280",
+  "D+":   "#9ca3af",
+  "C":    "#22c55e",
+  "C+":   "#4ade80",
+  "B":    "#3b82f6",
+  "B+":   "#60a5fa",
+  "A":    "#a855f7",
+  "A+":   "#c084fc",
+  "S":    "#ffd700",
+  "S+":   "#ffe44d",
+  "SS":   "#ffbd59",
+  "SS+":  "#ff8c00",
+  "SSS":  "#ff8c00",
+  "SSS+": "#de3a35",
+  "WTF":  "#1fe03f",
+  "WTF+": "#39ff5e",
 };

@@ -13,13 +13,16 @@ export function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center gap-12 py-12">
       {/* Hero section */}
-      <div className="text-center space-y-4 max-w-lg">
-        <h1 className="text-4xl font-bold tracking-tight text-dark-text sm:text-5xl">
-          Genshin <span className="text-accent">ArtScore</span>
+      <div className="text-center space-y-5 max-w-lg">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">Artifact Aurum</span>
         </h1>
-        <p className="text-dark-muted text-lg">
-          Enter a Genshin Impact UID to view artifact quality scores for every character on the
-          showcase.
+        <p className="text-dark-muted text-base font-medium tracking-wide uppercase">
+          Score your artifacts like the pros
+        </p>
+        <p className="text-dark-muted/80 text-lg">
+          Enter a UID to instantly evaluate artifact quality across your entire showcase — per
+          character, per piece.
         </p>
       </div>
 

@@ -58,7 +58,7 @@ export function ArtifactRow({ artifact, index, isPlaceholder = false }: Artifact
   return (
     <div className="grid grid-cols-[48px_1fr_auto] items-center gap-4 px-5 py-3.5 hover:bg-dark-card-hover/30 transition-colors">
       {/* Icon — 48×48px */}
-      <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg border border-dark-border bg-dark-bg">
+      <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg border border-dark-border bg-dark-bg icon-dark-bg">
         {artifactIconUrl && !iconError ? (
           <img
             src={artifactIconUrl}
@@ -103,7 +103,7 @@ export function ArtifactRow({ artifact, index, isPlaceholder = false }: Artifact
 
       {/* Score badge — upscaled */}
       <div className="flex-shrink-0">
-        <ScoreBadge score={artifact.score.total} grade={artifact.score.grade} pulse={artifact.score.grade === "WTF" || artifact.score.grade === "OP" || artifact.score.grade === "SSS"} />
+        <ScoreBadge score={artifact.score.total} grade={artifact.score.grade} pulse={artifact.score.grade === "WTF" || artifact.score.grade === "WTF+" || artifact.score.grade === "SSS"} />
       </div>
     </div>
   );

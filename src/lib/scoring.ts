@@ -1,14 +1,15 @@
 import type { Artifact, ScoreGrade, ArtifactSubstat } from "../types/artifact";
-import type { CharacterData, BuildScore } from "../types/character";
+import type { CharacterData, BuildScore, SetBonusResult } from "../types/character";
 import type { ScoringWeights, CharacterBuildConfig } from "../types/scoring";
 import type { FightProp } from "../types/enka";
 import {
   MAX_ROLL_VALUES,
   TOTAL_ROLLS_5_STAR,
   MAX_CV,
-  SCORE_WEIGHTS,
   GRADE_THRESHOLDS,
   ELEMENT_DMG_MAP,
+  POTENTIAL_SCALES,
+  REFERENCE_HIGH_ROLL,
 } from "./constants";
 import characterBuildsData from "../data/character-builds.json";
 import goProcessedData from "../../genshin_optimizer_processed_data.json";
@@ -67,6 +68,55 @@ const DEFAULT_WEIGHTS: ScoringWeights = {
 
 export function getMaxRoll(statKey: string): number {
   return MAX_ROLL_VALUES[statKey] ?? 0;
+}
+
+// ── Potential scale lookup ──
+
+export function computePotentialScale(statKey: string): number {
+  const scale = POTENTIAL_SCALES[statKey];
+  if (scale === undefined) {
+    console.warn(`Unknown stat key for potential scale: ${statKey}`);
+    return 0;
+  }
+  return scale;
+}
+
+// ── Weighted Potential ──
+
+/**
+ * Compute the Weighted Potential for an artifact's substats.
+ *
+ * For each substat: weight × statValue × potentialScale.
+ * Main stat exclusion: zeroes the weight corresponding to the artifact's main stat.
+ * Flat stat derivation: FLAT_ATK = ATK_PERCENT × 0.4, FLAT_HP = HP_PERCENT × 0.4, FLAT_DEF = DEF_PERCENT × 0.4.
+ */
+export function computeWeightedPotential(
+  substats: ArtifactSubstat[],
+  weights: ScoringWeights,
+  mainStatKey: string
+): number {
+  // Clone weights and apply main stat exclusion
+  const adjustedWeights = { ...weights };
+  const mainStatWeightKey = resolveWeightKey(mainStatKey);
+  if (mainStatWeightKey && adjustedWeights[mainStatWeightKey] !== undefined) {
+    adjustedWeights[mainStatWeightKey] = 0;
+  }
+
+  // Apply flat stat derivation: flat weight = percent weight × 0.4
+  adjustedWeights.FLAT_ATK = adjustedWeights.ATK_PERCENT * 0.4;
+  adjustedWeights.FLAT_HP = adjustedWeights.HP_PERCENT * 0.4;
+  adjustedWeights.FLAT_DEF = adjustedWeights.DEF_PERCENT * 0.4;
+
+  let totalPotential = 0;
+  for (const sub of substats) {
+    const weightKey = resolveWeightKey(sub.statKey);
+    const weight = weightKey ? (adjustedWeights[weightKey] ?? 0) : 0;
+    const potentialScale = computePotentialScale(sub.statKey);
+
+    totalPotential += weight * sub.value * potentialScale;
+  }
+
+  return totalPotential;
 }
 
 // ── Roll quality ──
@@ -232,43 +282,93 @@ export function computeWSE(substats: ArtifactSubstat[], avatarId: number): numbe
   return (weightedRolls / maxWeightedRolls) * 100;
 }
 
+// ── Ideal Potential ──
+
+/**
+ * Compute the theoretical maximum weighted potential for an artifact given
+ * a character's weights and the artifact's main stat (which is excluded).
+ *
+ * Formula: REFERENCE_HIGH_ROLL × (sum of top-4 weights + 5 × max weight) / 2
+ *
+ * The full formula (without /2) represents 9 perfect rolls (4 starting substats
+ * + 5 upgrade rolls). We halve it to create a Fribbels-style 0–200% scale where:
+ * - 100% = a solid artifact (~4.5 useful max rolls, average good piece)
+ * - 200% = theoretically perfect (all 9 rolls max into best stats, near-impossible)
+ */
+export function computeIdealPotential(
+  weights: ScoringWeights,
+  mainStatKey: string
+): number {
+  // Clone weights and apply main stat exclusion
+  const adjustedWeights = { ...weights };
+  const mainStatWeightKey = resolveWeightKey(mainStatKey);
+  if (mainStatWeightKey && adjustedWeights[mainStatWeightKey] !== undefined) {
+    adjustedWeights[mainStatWeightKey] = 0;
+  }
+
+  // Apply flat stat derivation: flat weight = percent weight × 0.4
+  adjustedWeights.FLAT_ATK = adjustedWeights.ATK_PERCENT * 0.4;
+  adjustedWeights.FLAT_HP = adjustedWeights.HP_PERCENT * 0.4;
+  adjustedWeights.FLAT_DEF = adjustedWeights.DEF_PERCENT * 0.4;
+
+  // Get all non-zero weights, sorted descending
+  const nonZeroWeights = Object.values(adjustedWeights)
+    .filter(w => w > 0)
+    .sort((a, b) => b - a);
+
+  if (nonZeroWeights.length === 0) return 0;
+
+  // Take top 4 (or fewer if not enough non-zero weights)
+  const topWeights = nonZeroWeights.slice(0, 4);
+  const maxWeight = topWeights[0]; // highest weight
+
+  // Ideal = REFERENCE_HIGH_ROLL × (sum of top-4 weights + 5 × maxWeight) / 2
+  // The full theoretical max represents 9 perfect rolls. We halve it to set the
+  // "ideal" baseline at ~4.5 useful rolls (Fribbels-style 0–200% scale).
+  // 100% = a solid artifact (~4.5 effective max rolls)
+  // 200% = theoretically perfect (all 9 rolls max into best stats)
+  const sumTop4 = topWeights.reduce((sum, w) => sum + w, 0);
+  const idealPotential = REFERENCE_HIGH_ROLL * (sumTop4 + 5 * maxWeight) / 2;
+
+  return idealPotential;
+}
+
 // ── Main Stat Correctness ──
 
 export function checkMainStat(
   slot: string,
   mainStatKey: FightProp,
   avatarId: number,
-): number {
+): { isCorrect: boolean; isRecommended: boolean } {
+  // Flower/Plume have fixed main stats — always correct
+  if (slot === "FLOWER" || slot === "PLUME") {
+    return { isCorrect: true, isRecommended: true };
+  }
+
   const config = getBuildConfig(avatarId);
-  if (!config?.main_stats_ideal) return 1.0; // No config → assume correct
+  if (!config?.main_stats_ideal) return { isCorrect: true, isRecommended: true };
 
   const idealSlot = config.main_stats_ideal as Record<string, string[] | undefined>;
   const ideal = idealSlot[slot];
 
-  if (!ideal) return 1.0; // Flower/Plume always "correct"
+  if (!ideal || ideal.length === 0) return { isCorrect: true, isRecommended: true };
 
-  // Build a list of stat keys to match against
+  // Build a list of stat keys to match against (resolve aliases)
   const statKeysToCheck: string[] = [mainStatKey];
   const mappedKey = resolveWeightKey(mainStatKey);
   if (mappedKey) statKeysToCheck.push(mappedKey);
 
-  // If main stat is an elemental damage bonus, also check without the element prefix
+  // If main stat is an elemental damage bonus, also add ELEMENTAL_DMG alias
   if (mainStatKey in ELEMENT_DMG_MAP) {
     statKeysToCheck.push("ELEMENTAL_DMG");
     statKeysToCheck.push(`${ELEMENT_DMG_MAP[mainStatKey].toUpperCase()}_DMG`);
   }
 
   for (const key of statKeysToCheck) {
-    if (ideal.includes(key)) return 1.0;
+    if (ideal.includes(key)) return { isCorrect: true, isRecommended: true };
   }
 
-  // Check if stat is "usable" (ATK%, DEF%, HP% when char scales off something else)
-  const usableFallbacks = ["ATK_PERCENT", "DEF_PERCENT", "HP_PERCENT"];
-  for (const key of statKeysToCheck) {
-    if (usableFallbacks.includes(key as string)) return 0.6;
-  }
-
-  return 0.3;
+  return { isCorrect: false, isRecommended: false };
 }
 
 // ── Set Bonus Multiplier ──
@@ -278,6 +378,74 @@ export function computeSetBonusMultiplier(setId: string, slot: string): number {
   if (slot === "GOBLET") return 1.0;
   // Flower, Plume, Sands, Circlet are penalized if off-set
   return 1.0; // We don't penalize yet — set bonus detection is done at build level
+}
+
+// ── Set Bonus Evaluation ──
+
+/**
+ * Evaluate set bonuses from equipped artifacts and compare against
+ * a character's recommended sets.
+ *
+ * - Counts equipped artifacts per set ID
+ * - Recognizes 2-piece bonus (count ≥ 2) and 4-piece bonus (count ≥ 4)
+ * - Compares active sets against recommendedSets from character config
+ * - Returns SetBonusResult with activeSets and matchStatus
+ * - Informational only — does NOT apply any multiplier to Potential Percent
+ * - Maximum 3 distinct active set bonuses displayable (from 5 artifact slots)
+ */
+export function evaluateSetBonus(
+  artifacts: Artifact[],
+  recommendedSets: string[]
+): SetBonusResult {
+  // Count artifacts per set
+  const setCounts = new Map<string, { count: number; name: string }>();
+  for (const art of artifacts) {
+    const entry = setCounts.get(art.setId) ?? { count: 0, name: art.setName };
+    entry.count++;
+    setCounts.set(art.setId, entry);
+  }
+
+  // Determine active bonuses (max 3 distinct sets possible from 5 slots)
+  const activeSets: Array<{ setId: string; setName: string; pieces: number }> = [];
+  for (const [setId, { count, name }] of setCounts) {
+    if (count >= 4) {
+      activeSets.push({ setId, setName: name, pieces: 4 });
+    } else if (count >= 2) {
+      activeSets.push({ setId, setName: name, pieces: 2 });
+    }
+  }
+
+  // Determine match status
+  if (!recommendedSets || recommendedSets.length === 0) {
+    return { activeSets, matchStatus: "no_recommendation" };
+  }
+
+  const recommendedSetIds = new Set(recommendedSets);
+  const has4pcMatch = activeSets.some(s => s.pieces === 4 && recommendedSetIds.has(s.setId));
+  const has2pcMatch = activeSets.some(s => recommendedSetIds.has(s.setId));
+
+  let matchStatus: SetBonusResult["matchStatus"];
+  if (has4pcMatch) matchStatus = "full_match";
+  else if (has2pcMatch) matchStatus = "partial_match";
+  else matchStatus = "no_match";
+
+  return { activeSets, matchStatus };
+}
+
+// ── Potential Percent ──
+
+/**
+ * Compute Potential Percent: the ratio of weighted potential to ideal potential.
+ * Returns 0 if ideal is 0 (avoids division by zero).
+ * Scores can exceed 100% (up to ~200%) since ideal represents half the theoretical max.
+ */
+export function computePotentialPercent(
+  weightedPotential: number,
+  idealPotential: number
+): number {
+  if (idealPotential <= 0) return 0;
+  const percent = (weightedPotential / idealPotential) * 100;
+  return Math.max(percent, 0);
 }
 
 // ── Grade mapping ──
@@ -298,64 +466,42 @@ export function scoreArtifact(
   avatarId: number,
 ): Artifact {
   const config = getBuildConfig(avatarId);
-  const weights = { ...(config?.substat_weights ?? DEFAULT_WEIGHTS) };
+  const weights = config?.substat_weights ?? DEFAULT_WEIGHTS;
 
-  // ── Main stat exclusion (Fribbels-style) ──
-  // If the main stat is a weighted stat, it CANNOT appear as a substat.
-  // Zero out its weight so the piece isn't penalized for missing an impossible substat.
-  const mainStatWeightKey = resolveWeightKey(artifact.mainStat.statKey);
-  if (mainStatWeightKey && weights[mainStatWeightKey] !== undefined) {
-    weights[mainStatWeightKey] = 0;
-  }
+  // New Fribbels-style scoring
+  const weightedPotential = computeWeightedPotential(artifact.substats, weights, artifact.mainStat.statKey);
+  const idealPotential = computeIdealPotential(weights, artifact.mainStat.statKey);
+  const potentialPercent = computePotentialPercent(weightedPotential, idealPotential);
+  const grade = getGrade(potentialPercent);
 
-  let fribbelsScore = 0;
-  // Fribbels uses 6.48 in HSR. But for Genshin, using 7.8 (the max CV of a single roll)
-  // maps the raw score precisely out to the community recognized "Crit Value equivalent".
-  const FRIBBELS_CONSTANT = 7.8;
+  // Main stat evaluation
+  const mainStatResult = checkMainStat(artifact.slot, artifact.mainStat.statKey, avatarId);
 
-  for (const sub of artifact.substats) {
-    if (sub.maxRoll <= 0) continue;
-
-    const weightKey = resolveWeightKey(sub.statKey);
-    const weight = weightKey ? (weights[weightKey] ?? 0) : 0;
-    
-    // Number of max rolls this substat represents
-    const rolls = sub.value / sub.maxRoll;
-    fribbelsScore += rolls * weight * FRIBBELS_CONSTANT;
-  }
-
+  // Legacy fields (backward compat)
   const rv = computeRV(artifact.substats);
   const cv = computeCV(artifact.substats);
   const cvNormalized = Math.min(cv / MAX_CV, 1.0);
-  const wse = (fribbelsScore / (9 * FRIBBELS_CONSTANT)) * 100;
-  const mainStatMultiplier = checkMainStat(artifact.slot, artifact.mainStat.statKey, avatarId);
-  const setBonusMultiplier = computeSetBonusMultiplier(artifact.setId, artifact.slot);
-
-  // In Fribbels, Sands/Goblet/Circlet naturally have lower possible substat combos
-  // when their main stat takes up a highly weighted stat pool slot (e.g. ATK% Sands).
-  // We offset this by adding exactly 1 max roll of score (7.8) if the main stat is ideal.
-  if (["SANDS", "GOBLET", "CIRCLET"].includes(artifact.slot) && mainStatMultiplier === 1.0) {
-    fribbelsScore += FRIBBELS_CONSTANT;
-  }
-
-  const adjustedTotal = fribbelsScore * mainStatMultiplier * setBonusMultiplier;
-  const grade = getGrade(adjustedTotal);
+  const wse = computeWSE(artifact.substats, avatarId);
 
   return {
     ...artifact,
     mainStat: {
       ...artifact.mainStat,
-      isCorrect: mainStatMultiplier === 1.0,
-      isRecommended: mainStatMultiplier >= 0.6,
+      isCorrect: mainStatResult.isCorrect,
+      isRecommended: mainStatResult.isRecommended,
     },
     score: {
+      potentialPercent,
+      weightedPotential,
+      idealPotential,
+      mainStatCorrect: mainStatResult.isCorrect,
+      mainStatMultiplier: mainStatResult.isCorrect ? 1.0 : 0.3,
+      setBonusMultiplier: 1.0,
       rv,
       cv,
       cvNormalized,
       wse,
-      mainStatMultiplier,
-      setBonusMultiplier,
-      total: Math.round(adjustedTotal * 10) / 10,
+      total: potentialPercent,  // unified score
       grade,
     },
   };
@@ -367,48 +513,42 @@ export function scoreBuild(character: CharacterData): BuildScore {
   const artifactCount = character.artifacts.length;
 
   if (artifactCount === 0) {
-    return { total: 0, grade: "F", artifactCount: 0 };
+    return {
+      total: 0,
+      grade: "F",
+      artifactCount: 0,
+      correctMainStats: 0,
+      totalSelectableSlots: 0,
+      setBonus: { activeSets: [], matchStatus: "no_recommendation" },
+    };
   }
 
-  const avgScore = character.artifacts.reduce((sum, art) => sum + art.score.total, 0) / artifactCount;
+  // Average potentialPercent across all equipped artifacts
+  const avgPotentialPercent = character.artifacts.reduce(
+    (sum, art) => sum + art.score.potentialPercent, 0
+  ) / artifactCount;
+  const total = Math.round(avgPotentialPercent * 10) / 10;
 
-  // ── Set bonus multiplier ──
-  // Reward builds that use the character's recommended artifact sets.
-  let setMultiplier = 1.0;
+  // Count correct main stats for selectable slots
+  const selectableSlots: string[] = ["SANDS", "GOBLET", "CIRCLET"];
+  const selectableArtifacts = character.artifacts.filter(
+    art => selectableSlots.includes(art.slot)
+  );
+  const totalSelectableSlots = selectableArtifacts.length;
+  const correctMainStats = selectableArtifacts.filter(
+    art => art.score.mainStatCorrect
+  ).length;
+
+  // Evaluate set bonus (informational — no multiplier applied)
   const config = getBuildConfig(character.avatarId);
-  if (config?.recommended_sets && config.recommended_sets.length > 0) {
-    // Count pieces per set
-    const setCounts = new Map<string, number>();
-    for (const art of character.artifacts) {
-      setCounts.set(art.setId, (setCounts.get(art.setId) ?? 0) + 1);
-    }
-
-    // Check how many pieces match recommended sets
-    const matchingCount = config.recommended_sets.reduce((sum, setId) =>
-      sum + (setCounts.get(setId) ?? 0), 0
-    );
-
-    // Check if the character has any 4pc set at all
-    const hasAny4pc = Array.from(setCounts.values()).some(c => c >= 4);
-
-    if (matchingCount >= 4) {
-      setMultiplier = 1.0;   // 4pc of recommended set — full score
-    } else if (matchingCount >= 2) {
-      setMultiplier = 0.93;  // 2pc of recommended set
-    } else if (hasAny4pc) {
-      setMultiplier = 0.88;  // 4pc of some set (not recommended but still complete)
-    } else if (matchingCount > 0) {
-      setMultiplier = 0.85;  // 1 pc match
-    } else {
-      setMultiplier = 0.82;  // No matching pieces at all
-    }
-  }
-
-  const total = Math.round(avgScore * setMultiplier * 10) / 10;
+  const setBonus = evaluateSetBonus(character.artifacts, config?.recommended_sets ?? []);
 
   return {
     total,
     grade: getGrade(total),
     artifactCount,
+    correctMainStats,
+    totalSelectableSlots,
+    setBonus,
   };
 }

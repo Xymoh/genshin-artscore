@@ -1,5 +1,5 @@
 import type { Artifact } from "../../types/artifact";
-import { GRADE_COLORS } from "../../types/artifact";
+import { GRADE_THRESHOLDS } from "../../lib/constants";
 import scoreIconImg from "../../assets/svg/ico-score.svg";
 import { useState } from "react";
 
@@ -12,6 +12,12 @@ interface ArtifactCardProps {
 function formatStatValue(value: number, isPercentage: boolean): string {
   if (isPercentage) return `${value.toFixed(1)}%`;
   return Math.round(value).toLocaleString();
+}
+
+/** Look up grade color and text color from GRADE_THRESHOLDS */
+function getGradeColors(grade: string): { color: string; textColor: string } {
+  const entry = GRADE_THRESHOLDS.find((t) => t.grade === grade);
+  return entry ? { color: entry.color, textColor: entry.textColor } : { color: "#4b5563", textColor: "#ffffff" };
 }
 
 // ── Chevron icon for roll indicators (Fribbels-style) ──
@@ -32,21 +38,19 @@ function RollChevrons({ count, color }: { count: number; color: string }) {
 
 export function ArtifactCard({ artifact }: ArtifactCardProps) {
   const [iconError, setIconError] = useState(false);
-  const gradeColor = GRADE_COLORS[artifact.score.grade] ?? "#6b7280";
+  const { color: gradeColor, textColor: gradeTextColor } = getGradeColors(artifact.score.grade);
   const artIconUrl = artifact.icon ? `${ENKA_UI_BASE}/${artifact.icon}.png` : null;
 
   return (
     <div
-      className="flex flex-col rounded-lg p-3 gap-1.5 flex-1 min-w-[180px] max-w-[260px]"
+      className="flex flex-col rounded-lg p-3 gap-1.5 flex-1 min-w-[180px] max-w-[260px] bg-dark-card border border-dark-border"
       style={{
-        backgroundColor: "var(--showcase-card-bg, rgb(15,17,23))",
-        border: "1px solid var(--showcase-card-border, rgba(255,255,255,0.08))",
         borderRadius: "6px",
       }}
     >
       {/* Top row: icon + level */}
       <div className="flex items-center justify-between">
-        <div className="w-18 h-18 rounded-md overflow-hidden bg-dark-bg border border-dark-border/40 flex-shrink-0">
+        <div className="w-18 h-18 rounded-md overflow-hidden bg-dark-bg icon-dark-bg border border-dark-border/40 flex-shrink-0">
           {artIconUrl && !iconError ? (
             <img src={artIconUrl} alt={artifact.setName} className="w-full h-full object-cover" loading="lazy" onError={() => setIconError(true)} />
           ) : (
@@ -59,7 +63,7 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" style={{ color: gradeColor }}>
             <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" />
           </svg>
-          <span className="text-md font-mono font-semibold text-white">+{artifact.level}</span>
+          <span className="text-md font-mono font-semibold text-dark-text">+{artifact.level}</span>
         </div>
       </div>
 
@@ -68,8 +72,17 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
 
       {/* Main stat */}
       <div className="flex items-center justify-between">
-        <span className="text-[11px] text-dark-muted truncate">{artifact.mainStat.displayName}</span>
-        <span className="text-sm font-mono font-bold text-white">
+        <span className="text-[11px] text-dark-muted truncate flex items-center gap-1">
+          {artifact.mainStat.isCorrect === false && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Incorrect main stat">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          )}
+          {artifact.mainStat.displayName}
+        </span>
+        <span className="text-sm font-mono font-bold text-dark-text">
           {formatStatValue(artifact.mainStat.value, artifact.mainStat.isPercentage)}
         </span>
       </div>
@@ -89,7 +102,7 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
                 <span style={{ color: rollColor }}>
                   <RollChevrons count={rolls} color={rollColor} />
                 </span>
-                <span className="text-[11px] font-mono text-white/80 tabular-nums text-right w-[50px]">
+                <span className="text-[11px] font-mono text-dark-text/80 tabular-nums text-right w-[50px]">
                   {formatStatValue(sub.value, sub.isPercentage)}
                 </span>
               </div>
@@ -111,7 +124,7 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
           <span className="text-[10px] text-dark-muted">Score</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-xs font-mono font-bold text-white">{artifact.score.total.toFixed(1)}</span>
+          <span className="text-xs font-mono font-bold text-dark-text">{artifact.score.potentialPercent.toFixed(1)}</span>
           <span className="text-[10px] font-extrabold px-1 py-0.5 rounded" style={{ backgroundColor: `${gradeColor}22`, color: gradeColor }}>
             {artifact.score.grade}
           </span>

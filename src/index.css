@@ -71,13 +71,64 @@
   }
 
   :root[data-theme="light"] {
-    --color-dark-bg: #f8fafc;
+    --color-dark-bg: #f5f3ef;
     --color-dark-card: #ffffff;
-    --color-dark-card-hover: #f1f5f9;
-    --color-dark-border: #e2e8f0;
-    --color-dark-text: #0f172a;
-    --color-dark-muted: #64748b;
+    --color-dark-card-hover: #f9f7f4;
+    --color-dark-border: #e0dcd5;
+    --color-dark-text: #1c1917;
+    --color-dark-muted: #57534e;
     --color-accent: #b8860b;
+  }
+
+  :root[data-theme="light"] body {
+    background-image: linear-gradient(135deg, #f5f3ef 0%, #ede9e0 100%);
+  }
+
+  :root[data-theme="light"] .tier-list-card,
+  :root[data-theme="light"] .character-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  :root[data-theme="light"] .tier-list-card:hover {
+    border-color: #c4bfb6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  :root[data-theme="light"] .substat-bar-track {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+
+  :root[data-theme="light"] .score-pill {
+    color: #1c1917;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  :root[data-theme="light"] .set-bonus-slot {
+    background-color: #faf8f5;
+  }
+
+  :root[data-theme="light"] .set-bonus-slot.active {
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
+  }
+
+  :root[data-theme="light"] .skeleton {
+    background: linear-gradient(
+      90deg,
+      #f0ece6 25%,
+      #e8e3db 50%,
+      #f0ece6 75%
+    );
+    background-size: 400% 100%;
+  }
+
+  :root[data-theme="light"] header {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom-color: #e0dcd5 !important;
+  }
+
+  /* Keep icon containers dark in light mode — Enka icons have white outlines */
+  :root[data-theme="light"] .icon-dark-bg {
+    background-color: #1a1d2e !important;
   }
 
   *,

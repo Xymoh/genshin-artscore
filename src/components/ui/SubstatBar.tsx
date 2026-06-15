@@ -41,7 +41,7 @@ export function SubstatBar({ substat }: SubstatBarProps) {
       </span>
 
       {/* Bar */}
-      <div className="flex-1 h-1.5 rounded-full bg-white/8 overflow-hidden min-w-0">
+      <div className="flex-1 h-1.5 rounded-full bg-dark-border/30 overflow-hidden min-w-0">
         <div
           className="h-full rounded-full transition-all duration-600"
           style={{ width: `${barWidth}%`, backgroundColor: fillColor }}
@@ -66,7 +66,7 @@ export function SubstatBar({ substat }: SubstatBarProps) {
         {Array.from({ length: emptyDots }, (_, i) => (
           <span
             key={`empty-${i}`}
-            className="w-2 h-2 rounded-full bg-white/12"
+            className="w-2 h-2 rounded-full bg-dark-border/50"
           />
         ))}
       </div>

@@ -34,19 +34,20 @@ const OUTPUT_FILE = path.join(ROOT, "genshin_optimizer_processed_data.json");
  */
 function fetchJSON(url, retries = 3) {
   return new Promise((resolve, reject) => {
-    const attempt = (remaining) => {
+    const attempt = (attemptNumber) => {
       https
         .get(url, { headers: { "User-Agent": "genshin-artscore-fetcher/1.0" } }, (res) => {
           // Follow redirects
           if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-            return fetchJSON(res.headers.location, remaining).then(resolve).catch(reject);
+            return fetchJSON(res.headers.location, retries - attemptNumber + 1).then(resolve).catch(reject);
           }
 
           if (res.statusCode !== 200) {
             const err = new Error(`HTTP ${res.statusCode} for ${url}`);
-            if (remaining > 0) {
-              console.warn(`  ⚠ Retrying (${remaining} attempts left): ${err.message}`);
-              setTimeout(() => attempt(remaining - 1), 1000 * (4 - remaining));
+            if (attemptNumber < retries) {
+              const delay = Math.pow(2, attemptNumber) * 1000; // exponential backoff: 2s, 4s, 8s
+              console.warn(`  ⚠ Attempt ${attemptNumber}/${retries} failed: ${err.message}. Retrying in ${delay / 1000}s…`);
+              setTimeout(() => attempt(attemptNumber + 1), delay);
               return;
             }
             return reject(err);
@@ -64,15 +65,16 @@ function fetchJSON(url, retries = 3) {
           });
         })
         .on("error", (e) => {
-          if (remaining > 0) {
-            console.warn(`  ⚠ Network error, retrying (${remaining} left): ${e.message}`);
-            setTimeout(() => attempt(remaining - 1), 1000 * (4 - remaining));
+          if (attemptNumber < retries) {
+            const delay = Math.pow(2, attemptNumber) * 1000;
+            console.warn(`  ⚠ Attempt ${attemptNumber}/${retries} network error: ${e.message}. Retrying in ${delay / 1000}s…`);
+            setTimeout(() => attempt(attemptNumber + 1), delay);
           } else {
-            reject(new Error(`Network error fetching ${url}: ${e.message}`));
+            reject(new Error(`Network error fetching ${url} after ${retries} attempts: ${e.message}`));
           }
         });
     };
-    attempt(retries);
+    attempt(1);
   });
 }
 
@@ -184,19 +186,20 @@ async function main() {
   console.log("╚══════════════════════════════════════════════════════╝\n");
 
   // ── 1. Fetch the master stats JSON from the GO repo ────────────
-  console.log("[1/4] Fetching allStat_gen.json from Genshin Optimizer repo…");
+  console.log("[1/5] Fetching allStat_gen.json from Genshin Optimizer repo…");
+  console.log(`      (up to 3 attempts with exponential backoff)`);
   let allStats;
   try {
     allStats = await fetchJSON(GO_STATS_URL);
     console.log(`  ✔ Downloaded (${(JSON.stringify(allStats).length / 1024 / 1024).toFixed(1)} MB)\n`);
   } catch (e) {
     console.error(`  ✖ Fatal: ${e.message}`);
-    console.error("    Ensure network connectivity and try again.");
+    console.error("    Pipeline failed after 3 retry attempts. Existing output preserved.");
     process.exit(1);
   }
 
   // ── 2. Load local build configs ────────────────────────────────
-  console.log("[2/4] Loading local build configuration files…");
+  console.log("[2/5] Loading local build configuration files…");
   const localBuilds = readLocalJSON(path.join(ROOT, "src", "data", "character-builds.json"));
   const localChars = readLocalJSON(path.join(ROOT, "src", "data", "characters.json"));
 
@@ -211,12 +214,17 @@ async function main() {
     console.warn("  ⚠ No local characters.json found.\n");
   }
 
+  // ── Load previous output for new character detection ───────────
+  const previousOutput = readLocalJSON(OUTPUT_FILE);
+  const previousKeys = previousOutput ? new Set(Object.keys(previousOutput)) : new Set();
+
   // ── 3. Parse character data ────────────────────────────────────
-  console.log("[3/4] Parsing character data…");
+  console.log("[3/5] Parsing character data…");
 
   const charData = allStats?.char?.data;
   if (!charData) {
     console.error("  ✖ Fatal: Could not find 'char.data' in allStat_gen.json");
+    console.error("    Existing output preserved.");
     process.exit(1);
   }
 
@@ -329,28 +337,88 @@ async function main() {
   console.log("");
 
   // ── 4. Write output ─────────────────────────────────────────────
-  console.log(`[4/4] Writing output to ${path.relative(ROOT, OUTPUT_FILE)}…`);
+  console.log(`[4/5] Writing output to ${path.relative(ROOT, OUTPUT_FILE)}…`);
   try {
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2), "utf-8");
     const stats = fs.statSync(OUTPUT_FILE);
-    console.log(`  ✔ Done!  Written ${(stats.size / 1024).toFixed(1)} KB\n`);
+    console.log(`  ✔ Written ${(stats.size / 1024).toFixed(1)} KB`);
   } catch (e) {
     console.error(`  ✖ Failed to write output: ${e.message}`);
     process.exit(1);
   }
 
+  // ── Validate written JSON (re-read and parse) ───────────────────
+  console.log("  ⏳ Validating written file…");
+  try {
+    const reReadRaw = fs.readFileSync(OUTPUT_FILE, "utf-8");
+    const reReadParsed = JSON.parse(reReadRaw);
+    const reReadKeys = Object.keys(reReadParsed);
+    if (reReadKeys.length !== processedCount) {
+      throw new Error(
+        `Integrity mismatch: wrote ${processedCount} characters but re-read ${reReadKeys.length}`
+      );
+    }
+    console.log(`  ✔ Validation passed — ${reReadKeys.length} entries verified\n`);
+  } catch (e) {
+    console.error(`  ✖ Validation failed: ${e.message}`);
+    console.error("    The output file may be corrupted.");
+    process.exit(1);
+  }
+
+  // ── 5. Generate reports ─────────────────────────────────────────
+  console.log("[5/5] Generating reports…\n");
+
+  // Report: characters using derived (non-curated) weights
+  const derivedWeightChars = Object.entries(output)
+    .filter(([, entry]) => entry.substat_weights === null)
+    .map(([key, entry]) => ({
+      name: key,
+      avatar_id: entry.avatar_id,
+      ascension_stat: entry.ascension_stat,
+    }));
+
+  if (derivedWeightChars.length > 0) {
+    console.log("┌─────────────────────────────────────────────────────────────────┐");
+    console.log("│  Characters using DERIVED (non-curated) weights                 │");
+    console.log("├─────────────────────────────────────────────────────────────────┤");
+    for (const char of derivedWeightChars) {
+      const idStr = char.avatar_id ? `ID: ${char.avatar_id}` : "ID: unknown";
+      console.log(`│  • ${char.name.padEnd(25)} ${idStr.padEnd(15)} scaling: ${char.ascension_stat}`);
+    }
+    console.log("└─────────────────────────────────────────────────────────────────┘\n");
+  } else {
+    console.log("  ✔ All characters have curated substat weights.\n");
+  }
+
+  // Report: new characters not present in previous output
+  const newCharKeys = Object.keys(output).filter((key) => !previousKeys.has(key));
+
+  if (newCharKeys.length > 0) {
+    console.log("┌─────────────────────────────────────────────────────────────────┐");
+    console.log("│  NEW characters (not in previous output — require manual review)│");
+    console.log("├─────────────────────────────────────────────────────────────────┤");
+    for (const key of newCharKeys) {
+      const entry = output[key];
+      const idStr = entry.avatar_id ? `ID: ${entry.avatar_id}` : "ID: unknown";
+      const weightStatus = entry.substat_weights ? "curated" : "derived";
+      console.log(`│  • ${key.padEnd(25)} ${idStr.padEnd(15)} weights: ${weightStatus}`);
+    }
+    console.log("└─────────────────────────────────────────────────────────────────┘\n");
+  } else if (previousKeys.size > 0) {
+    console.log("  ✔ No new characters detected.\n");
+  }
+
   // ── Summary ─────────────────────────────────────────────────────
-  const withWeights = Object.values(output).filter((c) => c.substat_weights !== null).length;
-  const withSets = Object.values(output).filter((c) => c.recommended_sets?.length > 0).length;
-  const withMainStats = Object.values(output).filter((c) => c.main_stats_ideal !== null).length;
+  const curatedCount = Object.values(output).filter((c) => c.substat_weights !== null).length;
+  const derivedCount = Object.values(output).filter((c) => c.substat_weights === null).length;
 
   console.log("╔══════════════════════════════════════════════════════╗");
   console.log("║  Pipeline Summary                                   ║");
   console.log("╠══════════════════════════════════════════════════════╣");
-  console.log(`║  Total characters parsed:  ${String(processedCount).padStart(25)} ║`);
-  console.log(`║  With substat weights:     ${String(withWeights).padStart(25)} ║`);
-  console.log(`║  With ideal main stats:    ${String(withMainStats).padStart(25)} ║`);
-  console.log(`║  With recommended sets:    ${String(withSets).padStart(25)} ║`);
+  console.log(`║  Total characters:         ${String(processedCount).padStart(25)} ║`);
+  console.log(`║  Curated weights:          ${String(curatedCount).padStart(25)} ║`);
+  console.log(`║  Derived weights:          ${String(derivedCount).padStart(25)} ║`);
+  console.log(`║  New characters:           ${String(newCharKeys.length).padStart(25)} ║`);
   console.log("╚══════════════════════════════════════════════════════╝");
 }
 

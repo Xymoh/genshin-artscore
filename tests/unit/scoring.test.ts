@@ -109,28 +109,44 @@ describe("computeWSE", () => {
 
 describe("getGrade", () => {
   it("returns correct grades", () => {
-    expect(getGrade(65)).toBe("WTF");
-    expect(getGrade(55)).toBe("OP");
-    expect(getGrade(48)).toBe("SSS");
-    expect(getGrade(42)).toBe("SS");
-    expect(getGrade(38)).toBe("S");
-    expect(getGrade(33)).toBe("A");
-    expect(getGrade(26)).toBe("B");
-    expect(getGrade(20)).toBe("C");
-    expect(getGrade(12)).toBe("D");
+    expect(getGrade(180)).toBe("WTF+");
+    expect(getGrade(165)).toBe("WTF");
+    expect(getGrade(155)).toBe("SSS+");
+    expect(getGrade(145)).toBe("SSS");
+    expect(getGrade(135)).toBe("SS+");
+    expect(getGrade(125)).toBe("SS");
+    expect(getGrade(115)).toBe("S+");
+    expect(getGrade(105)).toBe("S");
+    expect(getGrade(95)).toBe("A+");
+    expect(getGrade(85)).toBe("A");
+    expect(getGrade(75)).toBe("B+");
+    expect(getGrade(65)).toBe("B");
+    expect(getGrade(55)).toBe("C+");
+    expect(getGrade(45)).toBe("C");
+    expect(getGrade(35)).toBe("D+");
+    expect(getGrade(25)).toBe("D");
+    expect(getGrade(15)).toBe("F+");
     expect(getGrade(5)).toBe("F");
-    expect(getGrade(0)).toBe("F");
   });
 
   it("handles boundary values", () => {
-    expect(getGrade(60)).toBe("WTF");
-    expect(getGrade(50)).toBe("OP");
-    expect(getGrade(45)).toBe("SSS");
-    expect(getGrade(40)).toBe("SS");
-    expect(getGrade(35)).toBe("S");
-    expect(getGrade(30)).toBe("A");
-    expect(getGrade(24)).toBe("B");
-    expect(getGrade(16)).toBe("C");
-    expect(getGrade(8)).toBe("D");
+    expect(getGrade(170)).toBe("WTF+");
+    expect(getGrade(160)).toBe("WTF");
+    expect(getGrade(150)).toBe("SSS+");
+    expect(getGrade(140)).toBe("SSS");
+    expect(getGrade(130)).toBe("SS+");
+    expect(getGrade(120)).toBe("SS");
+    expect(getGrade(110)).toBe("S+");
+    expect(getGrade(100)).toBe("S");
+    expect(getGrade(90)).toBe("A+");
+    expect(getGrade(80)).toBe("A");
+    expect(getGrade(70)).toBe("B+");
+    expect(getGrade(60)).toBe("B");
+    expect(getGrade(50)).toBe("C+");
+    expect(getGrade(40)).toBe("C");
+    expect(getGrade(30)).toBe("D+");
+    expect(getGrade(20)).toBe("D");
+    expect(getGrade(10)).toBe("F+");
+    expect(getGrade(0)).toBe("F");
   });
 });

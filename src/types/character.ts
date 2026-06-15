@@ -63,10 +63,18 @@ export interface CharacterData {
   activeSetBonuses: string[];
 }
 
+export interface SetBonusResult {
+  activeSets: Array<{ setId: string; setName: string; pieces: number }>;
+  matchStatus: "full_match" | "partial_match" | "no_match" | "no_recommendation";
+}
+
 export interface BuildScore {
   total: number;
   grade: ScoreGrade;
   artifactCount: number;
+  correctMainStats: number;
+  totalSelectableSlots: number;
+  setBonus: SetBonusResult;
 }
 
 export interface ShowcaseData {
