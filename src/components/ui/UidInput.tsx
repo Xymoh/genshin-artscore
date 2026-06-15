@@ -73,9 +73,9 @@ export function UidInput() {
           <button
             type="submit"
             disabled={!isValidUid(rawInput) || isSubmitting}
-            className="h-12 px-6 rounded-xl bg-accent text-dark-bg font-semibold text-sm
+            className="h-12 px-4 sm:px-6 rounded-xl bg-accent text-dark-bg font-semibold text-sm
               hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed
-              transition-all duration-200 flex items-center gap-2"
+              transition-all duration-200 flex items-center gap-2 flex-shrink-0"
           >
             {isSubmitting ? (
               <span className="inline-block w-4 h-4 border-2 border-dark-bg/40 border-t-dark-bg rounded-full animate-spin" />
@@ -94,7 +94,7 @@ export function UidInput() {
                   <circle cx="11" cy="11" r="8" />
                   <path d="m21 21-4.35-4.35" />
                 </svg>
-                Look Up
+                <span className="hidden sm:inline">Look Up</span>
               </>
             )}
           </button>

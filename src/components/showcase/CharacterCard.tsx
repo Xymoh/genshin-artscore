@@ -305,7 +305,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
               {/* Constellations */}
               <div className="flex-1 rounded-xl border border-dark-border bg-dark-card p-3">
                 <div className="text-[11px] uppercase font-semibold tracking-wider text-dark-muted mb-2">Constellation</div>
-                <div className="flex gap-1.5 flex-wrap">
+                <div className="flex gap-1 sm:gap-1.5 flex-wrap">
                   {Array.from({ length: 6 }, (_, i) => {
                     const unlocked = i < character.constellation;
                     const sNum = i < 2 ? i + 1 : i === 2 ? 0 : i === 3 ? 3 : i === 4 ? 0 : 4;
@@ -315,7 +315,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                     const conIcon = `${ENKA_UI_BASE}/${conFile}.png`;
                     const fallbackIcon = useU ? `${ENKA_UI_BASE}/UI_Talent_S_${character.talentIconSuffix}_0${i + 1}.png` : `${ENKA_UI_BASE}/UI_Talent_U_${character.talentIconSuffix}_0${i + 1}.png`;
                     return (
-                      <div key={i} className={`relative w-14 h-14 rounded-lg overflow-hidden border-2 flex-shrink-0 bg-dark-bg icon-dark-bg ${unlocked ? "border-accent/60" : "border-dark-border/50"}`} title={`C${i + 1}${unlocked ? "" : " (locked)"}`}>
+                      <div key={i} className={`relative w-11 h-11 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 flex-shrink-0 bg-dark-bg icon-dark-bg ${unlocked ? "border-accent/60" : "border-dark-border/50"}`} title={`C${i + 1}${unlocked ? "" : " (locked)"}`}>
                         <img src={conIcon} alt={`C${i + 1}`} className="w-full h-full object-cover" loading="lazy"
                           onError={(e) => { if (e.currentTarget.src !== fallbackIcon) e.currentTarget.src = fallbackIcon; }}
                           style={{ filter: unlocked ? "none" : "brightness(0.4) saturate(0.3)" }} />
@@ -340,7 +340,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                     { label: "Burst", icon: `Skill_E_${character.talentIconSuffix}_01.png` },
                   ].map((t, idx) => (
                     <div key={idx} className="flex flex-col items-center gap-1">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-dark-border/40 bg-dark-bg icon-dark-bg">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-dark-border/40 bg-dark-bg icon-dark-bg">
                         <img src={`${ENKA_UI_BASE}/${t.icon}`} alt={t.label} className="w-full h-full object-cover" loading="lazy" />
                       </div>
                       <span className="text-xs font-mono font-semibold text-dark-text">

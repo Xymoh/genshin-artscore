@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="border-t border-dark-border py-6 text-center">
+    <footer className="border-t border-dark-border py-6 text-center px-4">
       <p className="text-dark-muted text-sm">
-        Genshin ArtScore is a fan-made tool and is not affiliated with HoYoverse.
+        Artifact Aurum is a fan-made tool and is not affiliated with HoYoverse.
         <br />
         Character data provided by{" "}
         <a

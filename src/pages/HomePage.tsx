@@ -14,7 +14,7 @@ export function HomePage() {
     <div className="flex flex-col items-center justify-center gap-12 py-12">
       {/* Hero section */}
       <div className="text-center space-y-5 max-w-lg">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
           <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">Artifact Aurum</span>
         </h1>
         <p className="text-dark-muted text-base font-medium tracking-wide uppercase">
