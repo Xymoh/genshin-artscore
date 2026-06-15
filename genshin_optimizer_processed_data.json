@@ -140,10 +140,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.6,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 150,
     "base_stats": {
       "hp_base": 911.791,
       "atk_base": 17.808,
@@ -172,10 +198,38 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0.3,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY",
+        "ELEC_ADD_HURT"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 802.3761,
       "atk_base": 19.41072,
@@ -204,10 +258,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0.6,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 820.6119,
       "atk_base": 13.356,
@@ -236,10 +316,37 @@
       0.2,
       0.2667
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 975.6164,
       "atk_base": 18.6984,
@@ -389,10 +496,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 793.2582,
       "atk_base": 18.6984,
@@ -730,10 +863,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 820.6119,
       "atk_base": 17.808,
@@ -762,10 +921,37 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 800.7888,
       "atk_base": 24.206,
@@ -1039,10 +1225,36 @@
       0.225,
       0.3
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.9,
+      "CRIT_DMG": 0.9,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 1,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.2
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 1012.088,
       "atk_base": 16.0272,
@@ -1132,10 +1344,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 920.90894,
       "atk_base": 18.6984,
@@ -1286,10 +1524,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 802.3761,
       "atk_base": 17.808,
@@ -1499,10 +1763,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "PHYSICAL_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 939.1447,
       "atk_base": 20.83536,
@@ -1531,10 +1820,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 1030.3239,
       "atk_base": 20.12304,
@@ -1684,10 +1999,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 784.14026,
       "atk_base": 20.12304,
@@ -1777,10 +2119,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 866.2015,
       "atk_base": 16.9176,
@@ -1931,10 +2298,36 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0.3,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "HEALING_BONUS"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 993.8522,
       "atk_base": 20.4792,
@@ -2026,10 +2419,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 1,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.3
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "DEF_PERCENT"
+      ],
+      "CIRCLET": [
+        "DEF_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 220,
     "base_stats": {
       "hp_base": 802.3761,
       "atk_base": 15.31488,
@@ -2058,10 +2477,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 802.3761,
       "atk_base": 16.38336,
@@ -2212,10 +2658,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 893.5552,
       "atk_base": 18.87648,
@@ -2305,10 +2778,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.6,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 1021.20593,
       "atk_base": 18.6984,
@@ -2337,10 +2835,36 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 848.4548,
       "atk_base": 18.21036,
@@ -2369,10 +2893,35 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.4,
+      "CRIT_DMG": 0.4,
+      "ATK_PERCENT": 1,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.3,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ATK_PERCENT"
+      ],
+      "CIRCLET": [
+        "ATK_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 1011.47253,
       "atk_base": 23.6474,
@@ -2401,10 +2950,35 @@
       0.2,
       0.2667
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 1,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.3
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "DEF_PERCENT"
+      ],
+      "CIRCLET": [
+        "DEF_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 893.5552,
       "atk_base": 16.0272,
@@ -2433,10 +3007,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.7,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.15,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 140,
     "base_stats": {
       "hp_base": 1030.3239,
       "atk_base": 17.808,
@@ -2526,10 +3125,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.6,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 820.6119,
       "atk_base": 16.73952,
@@ -2558,10 +3184,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0.5,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 1039.4418,
       "atk_base": 18.6984,
@@ -2590,10 +3242,37 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.5,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.9,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 110,
     "base_stats": {
       "hp_base": 844.64154,
       "atk_base": 20.8544,
@@ -2622,10 +3301,36 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.6,
+      "CRIT_DMG": 0.6,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.8,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 1182.1168,
       "atk_base": 17.8752,
@@ -2654,10 +3359,37 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.8,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 972.3864,
       "atk_base": 24.7646,
@@ -2686,10 +3418,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "WATER_ADD_HURT",
+        "HYDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 911.791,
       "atk_base": 17.808,
@@ -2718,10 +3477,37 @@
       86.4,
       115.2
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.9,
+      "CRIT_DMG": 0.9,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY",
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 806.5087,
       "atk_base": 23.275,
@@ -2750,10 +3536,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 930.0268,
       "atk_base": 18.16416,
@@ -2782,10 +3593,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 110,
     "base_stats": {
       "hp_base": 791.2556,
       "atk_base": 25.5094,
@@ -2814,10 +3651,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.6,
+      "CRIT_DMG": 0.6,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.1,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 220,
     "base_stats": {
       "hp_base": 802.3761,
       "atk_base": 16.4724,
@@ -2969,10 +3833,38 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.7,
+      "CRIT_DMG": 0.7,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.15,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 150,
     "base_stats": {
       "hp_base": 1220.2496,
       "atk_base": 20.6682,
@@ -3001,10 +3893,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0.5,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "HP_PERCENT"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 1048.5597,
       "atk_base": 18.6984,
@@ -3033,10 +3951,38 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 1002.9701,
       "atk_base": 19.5888,
@@ -3247,10 +4193,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "PHYSICAL_DMG",
+        "ICE_ADD_HURT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 1012.088,
       "atk_base": 21.3696,
@@ -3401,10 +4373,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0.6,
+      "HP_PERCENT": 0.3,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 1,
+      "HEALING_BONUS": 0.6,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ATK_PERCENT",
+        "ICE_ADD_HURT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "ATK_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 200,
     "base_stats": {
       "hp_base": 902.6731,
       "atk_base": 14.51352,
@@ -3616,10 +4615,36 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 957.38055,
       "atk_base": 25.28736,
@@ -3648,10 +4673,36 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 1,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0.4,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.3,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ATK_PERCENT"
+      ],
+      "CIRCLET": [
+        "ATK_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 810.322,
       "atk_base": 26.068,
@@ -3680,10 +4731,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.8,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.15
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 890.4009,
       "atk_base": 25.137,
@@ -3712,10 +4789,36 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0.5,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.3,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "HEALING_BONUS"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 1039.1188,
       "atk_base": 14.9891,
@@ -3805,10 +4908,37 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.8,
+      "CRIT_DMG": 0.8,
+      "ATK_PERCENT": 0.4,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 820.6119,
       "atk_base": 19.05456,
@@ -3897,10 +5027,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 1056.2786,
       "atk_base": 26.068,
@@ -3929,10 +5085,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.8,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.15
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 989.2932,
       "atk_base": 18.16416,
@@ -4142,10 +5325,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 110,
     "base_stats": {
       "hp_base": 762.656,
       "atk_base": 26.999,
@@ -4174,10 +5383,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.6,
+      "CRIT_DMG": 0.6,
+      "ATK_PERCENT": 0.5,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.7,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 775.02234,
       "atk_base": 20.4792,
@@ -4206,10 +5442,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 977.153,
       "atk_base": 27.93,
@@ -4238,10 +5500,35 @@
       86.4,
       115.2
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.4,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.1,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 905.654,
       "atk_base": 9.8686,
@@ -4270,10 +5557,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.4,
+      "CRIT_DMG": 0.4,
+      "ATK_PERCENT": 0.5,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 775.02234,
       "atk_base": 21.01344,
@@ -4302,10 +5616,35 @@
       86.4,
       115.2
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.4,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.1,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 991.4528,
       "atk_base": 16.758,
@@ -4334,10 +5673,35 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ATK_PERCENT"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 140,
     "base_stats": {
       "hp_base": 893.5552,
       "atk_base": 21.54768,
@@ -4366,10 +5730,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 110,
     "base_stats": {
       "hp_base": 988.59283,
       "atk_base": 27.7438,
@@ -4398,10 +5788,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 1039.1188,
       "atk_base": 26.999,
@@ -4430,10 +5846,35 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 845.2303,
       "atk_base": 14.95872,
@@ -4462,10 +5903,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 966.6665,
       "atk_base": 27.93,
@@ -4494,10 +5961,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 1,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HP_PERCENT",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 1048.5597,
       "atk_base": 15.84912,
@@ -4526,10 +6020,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 981.9196,
       "atk_base": 25.6956,
@@ -4558,10 +6078,39 @@
       86.4,
       115.2
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.8,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG",
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 829.3884,
       "atk_base": 19.84892,
@@ -4590,10 +6139,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEC_ADD_HURT",
+        "ELECTRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 972.3864,
       "atk_base": 27.3714,
@@ -4622,10 +6197,35 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.4,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.1,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 939.1447,
       "atk_base": 20.30112,
@@ -4654,10 +6254,37 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.4,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
+      ],
+      "GOBLET": [
+        "GRASS_ADD_HURT",
+        "DENDRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 988.9742,
       "atk_base": 26.8128,
@@ -4686,10 +6313,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.2,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 110,
     "base_stats": {
       "hp_base": 967.6198,
       "atk_base": 26.999,
@@ -4718,10 +6371,36 @@
       0.1385,
       0.1846
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0.8,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0.6,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0.2,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "HP_PERCENT",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "HP_PERCENT"
+      ],
+      "CIRCLET": [
+        "HEALING_BONUS",
+        "HP_PERCENT"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 808.7586,
       "atk_base": 18.6984,
@@ -4754,10 +6433,10 @@
       "CRIT_RATE": 0.8,
       "CRIT_DMG": 0.8,
       "ATK_PERCENT": 0,
-      "HP_PERCENT": 1.0,
+      "HP_PERCENT": 1,
       "DEF_PERCENT": 0,
       "ELEMENTAL_MASTERY": 0.2,
-      "ENERGY_RECHARGE": 1.0,
+      "ENERGY_RECHARGE": 1,
       "HEALING_BONUS": 0,
       "PHYSICAL_DMG": 0,
       "ELEMENTAL_DMG": 0,
@@ -4871,10 +6550,37 @@
       72,
       96
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0,
+      "CRIT_DMG": 0,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.4,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.1
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE",
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY",
+        "ROCK_ADD_HURT"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 1002.9701,
       "atk_base": 16.0272,
@@ -4903,10 +6609,36 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.5,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "ICE_ADD_HURT",
+        "CRYO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 130,
     "base_stats": {
       "hp_base": 981.9196,
       "atk_base": 27.4645,
@@ -4935,14 +6667,40 @@
       0.288,
       0.384
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.7,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.3,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
-      "hp_base": 1100.0,
-      "atk_base": 28.0,
-      "def_base": 65.0
+      "hp_base": 1100,
+      "atk_base": 28,
+      "def_base": 65
     },
     "region": "mondstadt",
     "source": "genshin-optimizer/frzyc",
@@ -4967,10 +6725,36 @@
       0.144,
       0.192
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0.8,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.4,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0.15
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "DEF_PERCENT"
+      ],
+      "GOBLET": [
+        "ROCK_ADD_HURT",
+        "GEO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 770.28253,
       "atk_base": 11.172,
@@ -4999,10 +6783,36 @@
       0.216,
       0.288
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 1,
+      "CRIT_DMG": 1,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "FIRE_ADD_HURT",
+        "PYRO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 120,
     "base_stats": {
       "hp_base": 810.322,
       "atk_base": 26.6266,
@@ -5031,10 +6841,37 @@
       0.18,
       0.24
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.4,
+      "CRIT_DMG": 0.4,
+      "ATK_PERCENT": 0.5,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.9,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ENERGY_RECHARGE",
+        "ATK_PERCENT"
+      ],
+      "GOBLET": [
+        "WIND_ADD_HURT",
+        "ANEMO_DMG"
+      ],
+      "CIRCLET": [
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 180,
     "base_stats": {
       "hp_base": 811.494,
       "atk_base": 18.52032,
@@ -5063,10 +6900,37 @@
       86.4000015258789,
       115.19999694824219
     ],
-    "substat_weights": null,
-    "main_stats_ideal": null,
+    "substat_weights": {
+      "CRIT_RATE": 0.5,
+      "CRIT_DMG": 0.5,
+      "ATK_PERCENT": 0,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 1,
+      "ENERGY_RECHARGE": 0.7,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": [
+        "ELEMENTAL_MASTERY",
+        "ENERGY_RECHARGE"
+      ],
+      "GOBLET": [
+        "ELEMENTAL_MASTERY"
+      ],
+      "CIRCLET": [
+        "ELEMENTAL_MASTERY",
+        "CRIT_RATE",
+        "CRIT_DMG"
+      ]
+    },
     "recommended_sets": [],
-    "er_threshold": null,
+    "er_threshold": 160,
     "base_stats": {
       "hp_base": 806.5087280273438,
       "atk_base": 23.274999618530273,
