@@ -6037,11 +6037,13 @@
     },
     "main_stats_ideal": {
       "SANDS": [
-        "ATK_PERCENT"
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
       ],
       "GOBLET": [
         "ELEC_ADD_HURT",
-        "ELECTRO_DMG"
+        "ELECTRO_DMG",
+        "ATK_PERCENT"
       ],
       "CIRCLET": [
         "CRIT_RATE",
