@@ -6,7 +6,7 @@ import { LoadingSkeleton } from "../components/ui/LoadingSkeleton";
 
 export function ShowcasePage() {
   const { uid } = useParams<{ uid: string }>();
-  const { data, isLoading, isError, error, refetch } = useShowcase(uid ?? "");
+  const { data, isLoading, isError, error, refetch, forceRefresh, dataUpdatedAt } = useShowcase(uid ?? "");
 
   const characters = data?.characters ?? [];
 
@@ -50,7 +50,8 @@ export function ShowcasePage() {
         uid={uid}
         playerInfo={data.playerInfo}
         characterCount={characters.length}
-        onRefresh={() => refetch()}
+        onRefresh={() => forceRefresh()}
+        lastUpdated={dataUpdatedAt}
       />
 
       {/* Character Grid — dak.gg-style card layout with Fribbels scoring */}

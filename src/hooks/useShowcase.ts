@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { fetchShowcase } from "../lib/api";
 import { parseShowcaseData } from "../lib/parsing";
@@ -6,6 +6,8 @@ import { scoreArtifact, scoreBuild } from "../lib/scoring";
 import type { ShowcaseData } from "../types/character";
 
 export function useShowcase(uid: string) {
+  const queryClient = useQueryClient();
+
   const queryFn = useCallback(async () => {
     const raw = await fetchShowcase(uid);
 
@@ -26,11 +28,18 @@ export function useShowcase(uid: string) {
     return parsed;
   }, [uid]);
 
-  return useQuery<ShowcaseData, Error>({
+  const query = useQuery<ShowcaseData, Error>({
     queryKey: ["showcase", uid],
     queryFn,
     enabled: uid.length === 9 && /^[1-9]\d{8}$/.test(uid),
     staleTime: 5 * 60 * 1000,
     retry: 1,
   });
+
+  // Force refresh: invalidate cache and refetch
+  const forceRefresh = useCallback(() => {
+    queryClient.invalidateQueries({ queryKey: ["showcase", uid] });
+  }, [queryClient, uid]);
+
+  return { ...query, forceRefresh };
 }

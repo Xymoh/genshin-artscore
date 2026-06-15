@@ -11,6 +11,7 @@ interface PlayerHeaderProps {
   };
   characterCount: number;
   onRefresh: () => void;
+  lastUpdated?: number;
 }
 
 function formatTimeAgo(timestamp: number): string {
@@ -24,14 +25,13 @@ function formatTimeAgo(timestamp: number): string {
   return `${days}d ago`;
 }
 
-export function PlayerHeader({ uid, playerInfo, characterCount, onRefresh }: PlayerHeaderProps) {
+export function PlayerHeader({ uid, playerInfo, characterCount, onRefresh, lastUpdated }: PlayerHeaderProps) {
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [lastUpdated] = useState(Date.now());
 
   const handleRefresh = useCallback(() => {
     setIsRefreshing(true);
     onRefresh();
-    setTimeout(() => setIsRefreshing(false), 1500);
+    setTimeout(() => setIsRefreshing(false), 2000);
   }, [onRefresh]);
 
   const handleCopyUrl = useCallback(async () => {
@@ -66,8 +66,12 @@ export function PlayerHeader({ uid, playerInfo, characterCount, onRefresh }: Pla
             )}
             <span>·</span>
             <span>{characterCount} chars</span>
-            <span>·</span>
-            <span>{formatTimeAgo(lastUpdated)}</span>
+            {lastUpdated && lastUpdated > 0 && (
+              <>
+                <span>·</span>
+                <span>{formatTimeAgo(lastUpdated)}</span>
+              </>
+            )}
           </div>
         </div>
       </div>
