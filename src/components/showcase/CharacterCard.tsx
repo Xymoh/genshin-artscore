@@ -357,7 +357,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
             {/* ── ARTIFACTS SECTION (Fribbels-style cards) ── */}
             <div className="rounded-xl border border-dark-border bg-dark-card/40 p-3 sm:p-4">
               <div className="text-[11px] uppercase font-semibold tracking-wider text-dark-muted mb-3">Artifacts</div>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 justify-items-center">
                 {["FLOWER", "PLUME", "SANDS", "GOBLET", "CIRCLET"].map((slotStr) => {
                   const art = character.artifacts.find((a) => a.slot === slotStr);
                   if (!art) {

@@ -43,7 +43,7 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
 
   return (
     <div
-      className="flex flex-col rounded-lg p-3 gap-1.5 flex-1 min-w-[180px] max-w-[260px] bg-dark-card border border-dark-border"
+      className="flex flex-col rounded-lg p-3 gap-1.5 w-full bg-dark-card border border-dark-border"
       style={{
         borderRadius: "6px",
       }}

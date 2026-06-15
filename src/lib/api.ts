@@ -1,10 +1,15 @@
 import type { EnkaResponse } from "../types/enka";
 
-// Enka.Network allows CORS from browsers directly.
-// In production (GitHub Pages), we call Enka directly.
+// Enka.Network does NOT allow CORS from browsers.
 // In development, the Vite dev server proxies /api/proxy to Enka.
+// In production (GitHub Pages), we use a CORS proxy.
 
-const ENKA_DIRECT_URL = "https://enka.network/api/uid";
+const ENKA_API_BASE = "https://enka.network/api/uid";
+
+// Public CORS proxy for production (GitHub Pages).
+// This adds the required Access-Control-Allow-Origin header.
+// For a production app, deploy your own Cloudflare Worker instead.
+const CORS_PROXY = "https://corsproxy.io/?";
 
 export interface ProxyResponse {
   success: boolean;
@@ -15,24 +20,21 @@ export interface ProxyResponse {
 /**
  * Fetches Genshin character showcase data.
  * - In development: uses the Vite dev server proxy at /api/proxy
- * - In production: calls Enka.Network directly (CORS is allowed)
+ * - In production: uses a CORS proxy to reach Enka.Network
  */
 export async function fetchShowcase(uid: string): Promise<EnkaResponse> {
   const isDev = import.meta.env.DEV;
   const url = isDev
     ? `/api/proxy?uid=${encodeURIComponent(uid)}`
-    : `${ENKA_DIRECT_URL}/${encodeURIComponent(uid)}`;
+    : `${CORS_PROXY}${encodeURIComponent(`${ENKA_API_BASE}/${uid}`)}`;
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 10_000);
+  const timeoutId = setTimeout(() => controller.abort(), 15_000);
 
   try {
     const response = await fetch(url, {
       signal: controller.signal,
-      headers: {
-        Accept: "application/json",
-        "User-Agent": "ArtifactAurum/1.0",
-      },
+      headers: { Accept: "application/json" },
     });
 
     if (!response.ok) {
@@ -52,7 +54,7 @@ export async function fetchShowcase(uid: string): Promise<EnkaResponse> {
     }
 
     // In dev mode, response is wrapped in { success, data }
-    // In production (direct Enka call), response IS the data
+    // In production (CORS proxy), response IS the raw Enka data
     if (isDev) {
       const json: ProxyResponse = await response.json();
       if (!json.success || !json.data) {
@@ -63,7 +65,7 @@ export async function fetchShowcase(uid: string): Promise<EnkaResponse> {
       return json.data;
     } else {
       const data: EnkaResponse = await response.json();
-      if (!data.avatarInfoList && !data.playerInfo) {
+      if (!data.playerInfo) {
         throw new Error("This UID could not be found. The player may not exist or their showcase is not public.");
       }
       return data;
