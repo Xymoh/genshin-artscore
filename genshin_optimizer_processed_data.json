@@ -6026,7 +6026,7 @@
       "ATK_PERCENT": 0.7,
       "HP_PERCENT": 0,
       "DEF_PERCENT": 0,
-      "ELEMENTAL_MASTERY": 0,
+      "ELEMENTAL_MASTERY": 0.5,
       "ENERGY_RECHARGE": 0.4,
       "HEALING_BONUS": 0,
       "PHYSICAL_DMG": 0,
@@ -6041,9 +6041,8 @@
         "ELEMENTAL_MASTERY"
       ],
       "GOBLET": [
-        "ELEC_ADD_HURT",
-        "ELECTRO_DMG",
-        "ATK_PERCENT"
+        "ATK_PERCENT",
+        "ELEMENTAL_MASTERY"
       ],
       "CIRCLET": [
         "CRIT_RATE",
