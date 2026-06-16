@@ -27,18 +27,94 @@ const ENKA_LOCALE = enkaLocaleData as Record<string, string>;
 
 // ── Weapon name lookup (hash-based with icon suffix fallback) ──
 // The Enka API provides `flat.nameTextMapHash` for all equipment items.
-// Weapon name resolution: icon suffix (curated) is most reliable for our use case.
-// The Enka nameTextMapHash can return incorrect names due to hash reuse across versions.
-function resolveWeaponName(flat: EnkaEquip["flat"]): string {
-  // Primary: icon suffix lookup from our curated weapons.json
-  const match = flat.icon.match(/UI_EquipIcon_(.+)/);
-  if (match) {
-    let iconSuffix = match[1];
-    // Remove _Awaken suffix (used for ascended weapon icons)
-    iconSuffix = iconSuffix.replace(/_Awaken$/, "");
-    if (WEAPONS[iconSuffix]) {
-      return WEAPONS[iconSuffix];
-    }
+// Weapon name resolution using itemId (most reliable, same approach as Enka.network).
+// Icon suffixes and nameTextMapHash are both unreliable due to internal reuse.
+const WEAPON_IDS: Record<number, string> = {
+  // 5-star Swords
+  11501: "Aquila Favonia", 11502: "Skyward Blade", 11503: "Freedom-Sworn", 11504: "Summit Shaper",
+  11505: "Primordial Jade Cutter", 11509: "Mistsplitter Reforged", 11510: "Haran Geppaku Futsu",
+  11511: "Key of Khaj-Nisut", 11512: "Light of Foliar Incision", 11513: "Splendor of Tranquil Waters",
+  11514: "Uraku Misugiri", 11515: "Absolution", 11516: "Peak Patrol Song",
+  11517: "Silken Moon's Serenade", 11518: "Dryas's Nocturne", 11519: "Bright Dawn Overture",
+  // 4-star Swords
+  11401: "Favonius Sword", 11402: "The Flute", 11403: "Sacrificial Sword", 11404: "Royal Longsword",
+  11405: "Lion's Roar", 11406: "Prototype Rancour", 11407: "Iron Sting", 11408: "Blackcliff Longsword",
+  11409: "The Black Sword", 11410: "The Alley Flash", 11412: "Sword of Descension",
+  11413: "Festering Desire", 11414: "Amenoma Kageuchi", 11415: "Cinnabar Spindle",
+  11416: "Kagotsurube Isshin", 11417: "Sapwood Blade", 11418: "Xiphos' Moonlight",
+  11419: "Toukabou Shigure", 11420: "Wolf-Fang", 11421: "Finale of the Deep",
+  11422: "Fleuve Cendre Ferryman", 11424: "The Dockhand's Assistant",
+  11425: "Sword of Narzissenkreuz", 11426: "Sturdy Bone",
+  // 3-star Swords
+  11301: "Cool Steel", 11302: "Harbinger of Dawn", 11303: "Traveler's Handy Sword",
+  11304: "Dark Iron Sword", 11305: "Fillet Blade", 11306: "Skyrider Sword",
+  // 5-star Claymores
+  12501: "Skyward Pride", 12502: "Wolf's Gravestone", 12503: "Song of Broken Pines",
+  12504: "The Unforged", 12510: "Redhorn Stonethresher", 12511: "Beacon of the Reed Sea",
+  12512: "Verdict", 12513: "A Thousand Blazing Suns", 12514: "Fang of the Mountain King",
+  // 4-star Claymores
+  12401: "Favonius Greatsword", 12402: "The Bell", 12403: "Sacrificial Greatsword",
+  12404: "Royal Greatsword", 12405: "Rainslasher", 12406: "Prototype Archaic",
+  12407: "Whiteblind", 12408: "Blackcliff Slasher", 12409: "Serpent Spine",
+  12410: "Lithic Blade", 12411: "Snow-Tombed Starsilver", 12412: "Luxurious Sea-Lord",
+  12414: "Katsuragikiri Nagamasa", 12415: "Makhaira Aquamarine", 12416: "Akuoumaru",
+  12417: "Talking Stick", 12418: "Tidal Shadow", 12419: "Portable Power Saw",
+  12424: "Ultimate Overlord's Mega Magic Sword", 12425: "Earth Shaker", 12426: "Fruitful Hook",
+  // 5-star Polearms
+  13501: "Staff of Homa", 13502: "Skyward Spine", 13504: "Vortex Vanquisher",
+  13505: "Primordial Jade Winged-Spear", 13507: "Calamity Queller", 13509: "Engulfing Lightning",
+  13511: "Staff of the Scarlet Sands", 13512: "Crimson Moon's Semblance",
+  13513: "Lumidouce Elegy", 13514: "Ring of Yaxche", 13515: "Footprint of the Rainbow",
+  13516: "Seasoned Symphony", 13517: "Disaster and Remorse", 13518: "Tupac's Grip",
+  13519: "Calamity of Eshu", 13520: "Bloodsoaked Ruins",
+  // 4-star Polearms
+  13401: "Dragon's Bane", 13402: "Prototype Starglitter", 13403: "Crescent Pike",
+  13404: "Blackcliff Pole", 13405: "Deathmatch", 13406: "Lithic Spear",
+  13407: "Favonius Lance", 13408: "Royal Spear", 13409: "Dragonspine Spear",
+  13414: "Kitain Cross Spear", 13415: "\"The Catch\"", 13416: "Wavebreaker's Fin",
+  13417: "Moonpiercer", 13419: "Missive Windspear", 13420: "Ballad of the Fjords",
+  13421: "Rightful Reward", 13422: "Prospector's Drill", 13424: "Dialogues of the Desert Sages",
+  // 3-star Polearms
+  13301: "White Tassel", 13302: "Halberd", 13303: "Black Tassel",
+  // 5-star Bows
+  15501: "Skyward Harp", 15502: "Amos' Bow", 15503: "Elegy for the End",
+  15507: "Thundering Pulse", 15508: "Polar Star", 15509: "Aqua Simulacra",
+  15511: "Hunter's Path", 15512: "The First Great Magic", 15513: "Silvershower Heartstrings",
+  15514: "Astral Vulture's Crimson Plumage", 15515: "Chain Breaker", 15516: "Wavesplitter",
+  // 4-star Bows
+  15401: "Favonius Warbow", 15402: "The Stringless", 15403: "Sacrificial Bow",
+  15404: "Royal Bow", 15405: "Rust", 15406: "Prototype Crescent",
+  15407: "Compound Bow", 15408: "Blackcliff Warbow", 15409: "The Viridescent Hunt",
+  15410: "The Alley Flash", 15411: "Windblume Ode", 15412: "Mitternachts Waltz",
+  15413: "Predator", 15414: "Mouun's Moon", 15415: "Fading Twilight",
+  15416: "Hamayumi", 15417: "King's Squire", 15418: "End of the Line",
+  15419: "Ibis Piercer", 15420: "Scion of the Blazing Sun", 15421: "Song of Stillness",
+  15422: "Range Gauge", 15424: "Cloudforged",
+  // 5-star Catalysts
+  14501: "Skyward Atlas", 14502: "Lost Prayer to the Sacred Winds", 14504: "Memory of Dust",
+  14506: "Everlasting Moonglow", 14509: "Kagura's Verity",
+  14511: "A Thousand Floating Dreams", 14512: "Tulaytullah's Remembrance",
+  14513: "Cashflow Supervision", 14514: "Jadefall's Splendor",
+  14515: "Tome of the Eternal Flow", 14516: "Crane's Echoing Call", 14517: "Surf's Up",
+  14518: "Ring of Ceiba", 14519: "Strum of Sea Foam", 14520: "Many Oaths of Dawn and Dusk",
+  14521: "Ode Beyond Time", 14522: "Etherlight Spindlelute",
+  // 4-star Catalysts
+  14401: "Favonius Codex", 14402: "The Widsith", 14403: "Sacrificial Fragments",
+  14404: "Royal Grimoire", 14405: "Solar Pearl", 14406: "Prototype Amber",
+  14407: "Mappa Mare", 14408: "Blackcliff Agate", 14409: "Eye of Perception",
+  14410: "Wine and Song", 14412: "Dodoco Tales", 14413: "Hakushin Ring",
+  14414: "Oathsworn Eye", 14415: "Wandering Evenstar", 14416: "Frostbearer",
+  14417: "Flowing Purity", 14418: "Ballad of the Boundless Blue",
+  14419: "Sacrificial Jade", 14424: "Vivid Notions",
+  // 3-star Catalysts
+  14301: "Magic Guide", 14302: "Thrilling Tales of Dragon Slayers", 14303: "Otherworldly Story",
+  14304: "Emerald Orb", 14305: "Twin Nephrite",
+};
+
+function resolveWeaponName(flat: EnkaEquip["flat"], itemId?: number): string {
+  // Primary: itemId lookup (same method Enka.network uses — most reliable)
+  if (itemId && WEAPON_IDS[itemId]) {
+    return WEAPON_IDS[itemId];
   }
 
   // Secondary: hash-based lookup from Enka locale data
@@ -47,9 +123,15 @@ function resolveWeaponName(flat: EnkaEquip["flat"]): string {
     if (hashName) return hashName;
   }
 
-  // Final fallback: format the icon suffix as a readable name
+  // Tertiary: icon suffix from curated weapons.json
+  const match = flat.icon.match(/UI_EquipIcon_(.+)/);
   if (match) {
-    return match[1].replace(/_Awaken$/, "").replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
+    let iconSuffix = match[1];
+    iconSuffix = iconSuffix.replace(/_Awaken$/, "");
+    if (WEAPONS[iconSuffix]) {
+      return WEAPONS[iconSuffix];
+    }
+    return iconSuffix.replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
   }
   return "Unknown Weapon";
 }
@@ -406,7 +488,7 @@ function extractWeapon(equips: EnkaEquip[]): CharacterWeapon | null {
       : 1;
 
     return {
-      name: resolveWeaponName(flat),
+      name: resolveWeaponName(flat, equip.itemId),
       icon,
       level: weapon?.level ?? 1,
       refinement,
