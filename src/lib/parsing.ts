@@ -33,7 +33,9 @@ function resolveWeaponName(flat: EnkaEquip["flat"]): string {
   // Primary: icon suffix lookup from our curated weapons.json
   const match = flat.icon.match(/UI_EquipIcon_(.+)/);
   if (match) {
-    const iconSuffix = match[1];
+    let iconSuffix = match[1];
+    // Remove _Awaken suffix (used for ascended weapon icons)
+    iconSuffix = iconSuffix.replace(/_Awaken$/, "");
     if (WEAPONS[iconSuffix]) {
       return WEAPONS[iconSuffix];
     }
@@ -47,7 +49,7 @@ function resolveWeaponName(flat: EnkaEquip["flat"]): string {
 
   // Final fallback: format the icon suffix as a readable name
   if (match) {
-    return match[1].replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
+    return match[1].replace(/_Awaken$/, "").replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
   }
   return "Unknown Weapon";
 }
