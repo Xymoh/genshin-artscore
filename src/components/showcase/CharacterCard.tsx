@@ -279,7 +279,7 @@ export function CharacterCard({ character, index }: CharacterCardProps) {
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-[10px] text-dark-muted">W</div>
                     )}
-                    <div className="absolute -bottom-0.5 left-0 right-0 flex justify-center">
+                    <div className="absolute bottom-0.5 left-0 right-0 flex justify-center">
                       <RarityStars count={character.weapon.rarity} />
                     </div>
                   </div>

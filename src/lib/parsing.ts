@@ -27,24 +27,26 @@ const ENKA_LOCALE = enkaLocaleData as Record<string, string>;
 
 // ── Weapon name lookup (hash-based with icon suffix fallback) ──
 // The Enka API provides `flat.nameTextMapHash` for all equipment items.
-// We use the Enka locale data (hash → display name) as the primary source,
-// falling back to our curated weapons.json (icon suffix → name) for older data.
+// Weapon name resolution: icon suffix (curated) takes priority over hash (can be stale).
 function resolveWeaponName(flat: EnkaEquip["flat"]): string {
-  // Primary: hash-based lookup from Enka locale data
-  if (flat.nameTextMapHash) {
-    const hashName = ENKA_LOCALE[flat.nameTextMapHash];
-    if (hashName) return hashName;
-  }
-
-  // Secondary fallback: icon suffix lookup from weapons.json
+  // Primary: icon suffix lookup from our curated weapons.json
   const match = flat.icon.match(/UI_EquipIcon_(.+)/);
   if (match) {
     const iconSuffix = match[1];
     if (WEAPONS[iconSuffix]) {
       return WEAPONS[iconSuffix];
     }
-    // Final fallback: format the icon suffix as a readable name
-    return iconSuffix.replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
+  }
+
+  // Secondary: hash-based lookup from Enka locale data
+  if (flat.nameTextMapHash) {
+    const hashName = ENKA_LOCALE[flat.nameTextMapHash];
+    if (hashName) return hashName;
+  }
+
+  // Final fallback: format the icon suffix as a readable name
+  if (match) {
+    return match[1].replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2");
   }
   return "Unknown Weapon";
 }
