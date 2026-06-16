@@ -12,7 +12,8 @@
     "test:e2e": "playwright test",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "fetch-locale": "node scripts/fetch-enka-locale.js"
+    "fetch-locale": "node scripts/fetch-enka-locale.js",
+    "fetch-weapons": "node scripts/build-weapon-ids.js"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
