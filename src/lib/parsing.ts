@@ -27,7 +27,8 @@ const ENKA_LOCALE = enkaLocaleData as Record<string, string>;
 
 // ── Weapon name lookup (hash-based with icon suffix fallback) ──
 // The Enka API provides `flat.nameTextMapHash` for all equipment items.
-// Weapon name resolution: icon suffix (curated) takes priority over hash (can be stale).
+// Weapon name resolution: icon suffix (curated) is most reliable for our use case.
+// The Enka nameTextMapHash can return incorrect names due to hash reuse across versions.
 function resolveWeaponName(flat: EnkaEquip["flat"]): string {
   // Primary: icon suffix lookup from our curated weapons.json
   const match = flat.icon.match(/UI_EquipIcon_(.+)/);
