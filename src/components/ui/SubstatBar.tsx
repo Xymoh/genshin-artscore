@@ -19,11 +19,10 @@ function formatStatValue(value: number, isPercentage: boolean): string {
 
 export function SubstatBar({ substat }: SubstatBarProps) {
   const fillColor = QUALITY_COLORS[substat.rollQuality];
-  const barWidth = Math.min((substat.rollCount / 2.25) * 100, 100);
+  const barWidth = Math.min((substat.rollCount / 5) * 100, 100);
 
-  const fullDots = Math.floor(substat.rollCount);
-  const hasHalfDot = substat.rollCount - fullDots >= 0.5;
-  const emptyDots = Math.max(0, 5 - fullDots - (hasHalfDot ? 1 : 0));
+  const fullDots = substat.rollCount;
+  const emptyDots = Math.max(0, 5 - fullDots);
 
   return (
     <div className="flex items-center gap-3 py-1">
@@ -57,12 +56,6 @@ export function SubstatBar({ substat }: SubstatBarProps) {
             style={{ backgroundColor: fillColor }}
           />
         ))}
-        {hasHalfDot && (
-          <span
-            className="w-2 h-2 rounded-full opacity-50"
-            style={{ backgroundColor: fillColor }}
-          />
-        )}
         {Array.from({ length: emptyDots }, (_, i) => (
           <span
             key={`empty-${i}`}

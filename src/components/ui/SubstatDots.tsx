@@ -19,9 +19,8 @@ export function SubstatDots({ substats }: SubstatDotsProps) {
     <div className="flex items-center gap-4 mt-1.5">
       {substats.map((sub) => {
         const color = QUALITY_COLORS[sub.rollQuality];
-        const fullDots = Math.floor(sub.rollCount);
-        const hasHalf = sub.rollCount - fullDots >= 0.5;
-        const emptyDots = Math.max(0, 4 - fullDots - (hasHalf ? 1 : 0));
+        const fullDots = sub.rollCount;
+        const emptyDots = Math.max(0, 5 - fullDots);
 
         return (
           <div key={sub.statKey} className="flex items-center gap-1" title={`${sub.displayName}: ${sub.shortName}`}>
@@ -30,9 +29,6 @@ export function SubstatDots({ substats }: SubstatDotsProps) {
               {Array.from({ length: fullDots }, (_, i) => (
                 <span key={`f-${i}`} className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
               ))}
-              {hasHalf && (
-                <span className="w-2 h-2 rounded-full opacity-40" style={{ backgroundColor: color }} />
-              )}
               {Array.from({ length: emptyDots }, (_, i) => (
                 <span key={`e-${i}`} className="w-2 h-2 rounded-full bg-dark-border/40" />
               ))}

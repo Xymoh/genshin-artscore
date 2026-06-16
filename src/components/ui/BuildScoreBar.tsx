@@ -43,7 +43,7 @@ export function BuildScoreBar({
       <div className="flex items-center gap-5 sm:gap-6">
         {/* Massive grade letter */}
         <div
-          className="flex h-16 w-16 sm:h-[72px] sm:w-[72px] flex-shrink-0 items-center justify-center rounded-xl text-4xl sm:text-5xl font-bold font-mono"
+          className="flex h-16 min-w-16 px-2 sm:h-[72px] sm:min-w-[72px] sm:px-3 flex-shrink-0 items-center justify-center rounded-xl text-3xl sm:text-4xl font-bold font-mono"
           style={{ backgroundColor: `${barColor}20`, color: barColor }}
         >
           {grade}

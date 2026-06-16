@@ -154,14 +154,128 @@ function resolvePropId(rawId: string): string {
 
 // ── Substat building ──
 
-function buildSubstats(raw: EnkaSubstat[] | undefined): ArtifactSubstat[] {
+/**
+ * Decode appendPropIdList to count how many times each stat was rolled.
+ * The IDs have format: 5XXYYZ where XX encodes stat type and Z encodes tier.
+ * Specifically: stat type is derived from floor(id / 10) % 100 (the tens/hundreds digit group).
+ *
+ * Stat code mapping (the 2-digit code before the tier digit):
+ *   01 = flat HP, 02 = flat HP (alt), 03 = HP%, 04 = HP% (alt),
+ *   05 = flat ATK, 06 = ATK%, 07 = flat DEF (alt), 08 = flat DEF, 09 = DEF%,
+ *   20 = CRIT Rate, 22 = CRIT DMG, 23 = Energy Recharge, 24 = Elemental Mastery
+ */
+const APPEND_PROP_STAT_MAP: Record<number, string> = {
+  1: "FIGHT_PROP_HP",
+  2: "FIGHT_PROP_HP",
+  3: "FIGHT_PROP_HP_PERCENT",
+  4: "FIGHT_PROP_HP_PERCENT",
+  5: "FIGHT_PROP_ATTACK",
+  6: "FIGHT_PROP_ATTACK_PERCENT",
+  7: "FIGHT_PROP_DEFENSE",
+  8: "FIGHT_PROP_DEFENSE",
+  9: "FIGHT_PROP_DEFENSE_PERCENT",
+  20: "FIGHT_PROP_CRITICAL",
+  22: "FIGHT_PROP_CRITICAL_HURT",
+  23: "FIGHT_PROP_CHARGE_EFFICIENCY",
+  24: "FIGHT_PROP_ELEMENT_MASTERY",
+};
+
+/**
+ * Count the number of enhancements (upgrades) for each substat using appendPropIdList.
+ * Returns a map of FIGHT_PROP_* → enhancement count (0-5).
+ *
+ * Logic: the appendPropIdList contains ALL rolls (initial substats + enhancements).
+ * For a +20 5-star artifact:
+ *   - Started with 4 substats: list has 9 entries (4 initial + 5 enhancements)
+ *   - Started with 3 substats: list has 8 entries (3 initial + 5 enhancements)
+ *
+ * Enhancement count per stat = total occurrences - 1 (for the initial roll).
+ * Exception: if the artifact started with 3 substats, the 4th stat that appeared
+ * at +4 has ALL its occurrences as enhancements (first appearance IS an enhancement).
+ */
+function countEnhancementsFromAppendList(appendPropIdList: number[]): Map<string, number> {
+  // Count total occurrences of each stat
+  const statCounts = new Map<string, number>();
+
+  for (const id of appendPropIdList) {
+    // Extract stat code: remove the last digit (tier) and take the stat identifier
+    // ID format example: 501221 → 50122 + tier 1 → stat code = 22
+    const withoutTier = Math.floor(id / 10);
+    const statCode = withoutTier % 100;
+    const statKey = APPEND_PROP_STAT_MAP[statCode];
+    if (statKey) {
+      statCounts.set(statKey, (statCounts.get(statKey) ?? 0) + 1);
+    }
+  }
+
+  // Determine if artifact started with 3 or 4 substats
+  // 5-star +20 artifacts: 9 entries = 4 initial, 8 entries = 3 initial
+  const numInitialStats = appendPropIdList.length >= 9 ? 4 : 3;
+  const numDistinctStats = statCounts.size;
+
+  // Calculate enhancements per stat
+  const enhancements = new Map<string, number>();
+
+  if (numInitialStats === 4 || numDistinctStats <= numInitialStats) {
+    // All stats were present at +0: enhancements = total - 1
+    for (const [stat, count] of statCounts) {
+      enhancements.set(stat, Math.max(0, count - 1));
+    }
+  } else {
+    // 3 initial substats: one stat appeared as enhancement at +4
+    // The stat with the fewest occurrences that appeared after position 3
+    // is likely the one that was added. But we can't be 100% sure just from counts.
+    // Heuristic: the stat with the fewest total rolls that's not in the first 3 IDs
+    // was the added stat (all its rolls are enhancements).
+
+    // Get the stats from the first 3 entries (initial substats)
+    const initialStats = new Set<string>();
+    for (let i = 0; i < Math.min(3, appendPropIdList.length); i++) {
+      const withoutTier = Math.floor(appendPropIdList[i] / 10);
+      const statCode = withoutTier % 100;
+      const statKey = APPEND_PROP_STAT_MAP[statCode];
+      if (statKey) initialStats.add(statKey);
+    }
+
+    for (const [stat, count] of statCounts) {
+      if (initialStats.has(stat)) {
+        // Was an initial stat: enhancements = total - 1
+        enhancements.set(stat, Math.max(0, count - 1));
+      } else {
+        // Was added during enhancement: all occurrences are enhancements
+        enhancements.set(stat, count);
+      }
+    }
+  }
+
+  return enhancements;
+}
+
+function buildSubstats(raw: EnkaSubstat[] | undefined, appendPropIdList?: number[]): ArtifactSubstat[] {
   if (!raw || raw.length === 0) return [];
+
+  // If appendPropIdList is available, use exact roll counting
+  const enhancementCounts = appendPropIdList && appendPropIdList.length > 0
+    ? countEnhancementsFromAppendList(appendPropIdList)
+    : null;
 
   return raw.map((s) => {
     const statKey = s.appendPropId as FightProp;
     const meta = resolveStatName(statKey);
     const maxRoll = getMaxRoll(statKey);
-    const rollCount = maxRoll > 0 ? s.statValue / maxRoll : 0;
+
+    // Roll count: number of enhancements (upgrades) for this stat
+    let rollCount: number;
+    if (enhancementCounts) {
+      // Exact count from appendPropIdList
+      rollCount = enhancementCounts.get(statKey) ?? 0;
+    } else {
+      // Fallback: estimate from value using average roll
+      const avgRoll = maxRoll * 0.85;
+      const totalRolls = avgRoll > 0 ? Math.round(s.statValue / avgRoll) : 0;
+      rollCount = Math.max(0, totalRolls - 1);
+    }
+
     const quality = computeRollQuality(s.statValue, maxRoll);
 
     return {
@@ -578,7 +692,8 @@ function parseArtifact(equip: EnkaEquip): Artifact | null {
   const setName = resolveSetName(flat);
 
   // Use flat.reliquarySubstats directly (string appendPropId values)
-  const substats = buildSubstats(flat.reliquarySubstats);
+  // Pass appendPropIdList for exact roll counting
+  const substats = buildSubstats(flat.reliquarySubstats, reliquary?.appendPropIdList);
 
   // Clamp artifact level to valid range [0, 20]
   const rawLevel = reliquary?.level ?? flat.rankLevel ?? 0;

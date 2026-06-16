@@ -95,7 +95,7 @@ export function ArtifactCard({ artifact }: ArtifactCardProps) {
       {/* Substats */}
       <div className="flex flex-col gap-0.5">
         {artifact.substats.map((sub) => {
-          const rolls = Math.round(sub.rollCount);
+          const rolls = sub.rollCount;
           const rollColor = rolls >= 4 ? "#4ade80" : rolls >= 3 ? "#facc15" : rolls >= 2 ? "#fb923c" : "#6b7280";
           return (
             <div key={sub.statKey} className="flex items-center justify-between">

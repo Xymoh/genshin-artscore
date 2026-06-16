@@ -1607,5 +1607,30 @@
     },
     "recommended_sets": ["14036", "14027", "14024"],
     "er_threshold": 120
+  },
+  "10000120": {
+    "name": "Flins",
+    "substat_weights": {
+      "CRIT_RATE": 1.0,
+      "CRIT_DMG": 1.0,
+      "ATK_PERCENT": 0.8,
+      "HP_PERCENT": 0,
+      "DEF_PERCENT": 0,
+      "ELEMENTAL_MASTERY": 0.5,
+      "ENERGY_RECHARGE": 0.3,
+      "HEALING_BONUS": 0,
+      "PHYSICAL_DMG": 0,
+      "ELEMENTAL_DMG": 0,
+      "FLAT_ATK": 0.15,
+      "FLAT_HP": 0,
+      "FLAT_DEF": 0
+    },
+    "main_stats_ideal": {
+      "SANDS": ["ATK_PERCENT", "ELEMENTAL_MASTERY"],
+      "GOBLET": ["ATK_PERCENT", "ELEMENTAL_MASTERY"],
+      "CIRCLET": ["CRIT_DMG", "CRIT_RATE"]
+    },
+    "recommended_sets": [],
+    "er_threshold": 110
   }
 }
